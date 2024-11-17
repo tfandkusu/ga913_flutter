@@ -1,4 +1,4 @@
-# 【WIP】 ga913-flutter
+# 【WIP】 Flutter 学習用リポジトリ
 
 Apple 公式サンプル [Handling user input](https://developer.apple.com/tutorials/swiftui/handling-user-input) と同じ仕様の Flutter アプリを自作中です。
 
