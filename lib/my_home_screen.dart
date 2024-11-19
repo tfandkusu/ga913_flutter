@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/my_home_ui_state_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MyHomeScreen extends HookConsumerWidget {
@@ -7,7 +8,8 @@ class MyHomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = useState(1);
+    final stateNotifier = ref.read(myHomeUiModelNotifierProvider.notifier);
+    final uiModel = ref.watch(myHomeUiModelNotifierProvider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -21,7 +23,7 @@ class MyHomeScreen extends HookConsumerWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${state.value}',
+              '${uiModel.count}',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -29,7 +31,7 @@ class MyHomeScreen extends HookConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          state.value += 1;
+          stateNotifier.increment();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
