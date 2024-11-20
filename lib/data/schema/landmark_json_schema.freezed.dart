@@ -291,3 +291,169 @@ abstract class _LandmarkJsonSchema implements LandmarkJsonSchema {
   _$$LandmarkJsonSchemaImplCopyWith<_$LandmarkJsonSchemaImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+LandmarkJsonSchemaList _$LandmarkJsonSchemaListFromJson(
+    Map<String, dynamic> json) {
+  return _LandmarkJsonSchemaList.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LandmarkJsonSchemaList {
+  List<LandmarkJsonSchema> get landmarks => throw _privateConstructorUsedError;
+
+  /// Serializes this LandmarkJsonSchemaList to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LandmarkJsonSchemaList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LandmarkJsonSchemaListCopyWith<LandmarkJsonSchemaList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LandmarkJsonSchemaListCopyWith<$Res> {
+  factory $LandmarkJsonSchemaListCopyWith(LandmarkJsonSchemaList value,
+          $Res Function(LandmarkJsonSchemaList) then) =
+      _$LandmarkJsonSchemaListCopyWithImpl<$Res, LandmarkJsonSchemaList>;
+  @useResult
+  $Res call({List<LandmarkJsonSchema> landmarks});
+}
+
+/// @nodoc
+class _$LandmarkJsonSchemaListCopyWithImpl<$Res,
+        $Val extends LandmarkJsonSchemaList>
+    implements $LandmarkJsonSchemaListCopyWith<$Res> {
+  _$LandmarkJsonSchemaListCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LandmarkJsonSchemaList
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? landmarks = null,
+  }) {
+    return _then(_value.copyWith(
+      landmarks: null == landmarks
+          ? _value.landmarks
+          : landmarks // ignore: cast_nullable_to_non_nullable
+              as List<LandmarkJsonSchema>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LandmarkJsonSchemaListImplCopyWith<$Res>
+    implements $LandmarkJsonSchemaListCopyWith<$Res> {
+  factory _$$LandmarkJsonSchemaListImplCopyWith(
+          _$LandmarkJsonSchemaListImpl value,
+          $Res Function(_$LandmarkJsonSchemaListImpl) then) =
+      __$$LandmarkJsonSchemaListImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<LandmarkJsonSchema> landmarks});
+}
+
+/// @nodoc
+class __$$LandmarkJsonSchemaListImplCopyWithImpl<$Res>
+    extends _$LandmarkJsonSchemaListCopyWithImpl<$Res,
+        _$LandmarkJsonSchemaListImpl>
+    implements _$$LandmarkJsonSchemaListImplCopyWith<$Res> {
+  __$$LandmarkJsonSchemaListImplCopyWithImpl(
+      _$LandmarkJsonSchemaListImpl _value,
+      $Res Function(_$LandmarkJsonSchemaListImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LandmarkJsonSchemaList
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? landmarks = null,
+  }) {
+    return _then(_$LandmarkJsonSchemaListImpl(
+      landmarks: null == landmarks
+          ? _value._landmarks
+          : landmarks // ignore: cast_nullable_to_non_nullable
+              as List<LandmarkJsonSchema>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LandmarkJsonSchemaListImpl implements _LandmarkJsonSchemaList {
+  const _$LandmarkJsonSchemaListImpl(
+      {required final List<LandmarkJsonSchema> landmarks})
+      : _landmarks = landmarks;
+
+  factory _$LandmarkJsonSchemaListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LandmarkJsonSchemaListImplFromJson(json);
+
+  final List<LandmarkJsonSchema> _landmarks;
+  @override
+  List<LandmarkJsonSchema> get landmarks {
+    if (_landmarks is EqualUnmodifiableListView) return _landmarks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_landmarks);
+  }
+
+  @override
+  String toString() {
+    return 'LandmarkJsonSchemaList(landmarks: $landmarks)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LandmarkJsonSchemaListImpl &&
+            const DeepCollectionEquality()
+                .equals(other._landmarks, _landmarks));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_landmarks));
+
+  /// Create a copy of LandmarkJsonSchemaList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LandmarkJsonSchemaListImplCopyWith<_$LandmarkJsonSchemaListImpl>
+      get copyWith => __$$LandmarkJsonSchemaListImplCopyWithImpl<
+          _$LandmarkJsonSchemaListImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LandmarkJsonSchemaListImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LandmarkJsonSchemaList implements LandmarkJsonSchemaList {
+  const factory _LandmarkJsonSchemaList(
+          {required final List<LandmarkJsonSchema> landmarks}) =
+      _$LandmarkJsonSchemaListImpl;
+
+  factory _LandmarkJsonSchemaList.fromJson(Map<String, dynamic> json) =
+      _$LandmarkJsonSchemaListImpl.fromJson;
+
+  @override
+  List<LandmarkJsonSchema> get landmarks;
+
+  /// Create a copy of LandmarkJsonSchemaList
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LandmarkJsonSchemaListImplCopyWith<_$LandmarkJsonSchemaListImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
