@@ -1,9 +1,15 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../model/landmark.dart';
 import '../schema/landmark_json_schema.dart';
+part 'landmark_repository.g.dart';
+
+@riverpod
+LandmarkRepository landmarkRepository(Ref ref) => LandmarkRepository();
 
 class LandmarkRepository {
   Future<List<Landmark>> getLandmarks() async {
