@@ -25,7 +25,7 @@ class LandmarkRepository {
               isFavorite: jsonSchema.isFavorite,
               park: jsonSchema.park,
               description: jsonSchema.description,
-              imageUrl: jsonSchema.imageName,
+              imageUrl: "assets/${jsonSchema.imageName}.jpg",
             ))
         .toList();
   }

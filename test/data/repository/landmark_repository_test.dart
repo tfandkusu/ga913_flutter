@@ -23,6 +23,6 @@ void main() {
     expect(landmark.isFavorite, true);
     expect(landmark.park, "Joshua Tree National Park");
     expect(landmark.description.length, greaterThan(1));
-    expect(landmark.imageUrl, "turtlerock");
+    expect(landmark.imageUrl, "assets/turtlerock.jpg");
   });
 }
