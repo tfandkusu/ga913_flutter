@@ -18,13 +18,3 @@ class LandmarkJsonSchema with _$LandmarkJsonSchema {
   factory LandmarkJsonSchema.fromJson(Map<String, dynamic> json) =>
       _$LandmarkJsonSchemaFromJson(json);
 }
-
-@freezed
-class LandmarkJsonSchemaList with _$LandmarkJsonSchemaList {
-  const factory LandmarkJsonSchemaList({
-    required List<LandmarkJsonSchema> landmarks,
-  }) = _LandmarkJsonSchemaList;
-
-  factory LandmarkJsonSchemaList.fromJson(Map<String, dynamic> json) =>
-      _$LandmarkJsonSchemaListFromJson(json);
-}

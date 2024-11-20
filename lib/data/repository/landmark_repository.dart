@@ -6,6 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../model/landmark.dart';
 import '../schema/landmark_json_schema.dart';
+
 part 'landmark_repository.g.dart';
 
 @riverpod
@@ -14,9 +15,9 @@ LandmarkRepository landmarkRepository(Ref ref) => LandmarkRepository();
 class LandmarkRepository {
   Future<List<Landmark>> getLandmarks() async {
     final jsonString = await rootBundle.loadString('assets/landmarkData.json');
-    final landmarkJsonSchemaList =
-        LandmarkJsonSchemaList.fromJson(json.decode(jsonString));
-    return landmarkJsonSchemaList.landmarks
+    List<dynamic> jsonListMap = json.decode(jsonString);
+    return jsonListMap
+        .map((jsonMap) => LandmarkJsonSchema.fromJson(jsonMap))
         .map((jsonSchema) => Landmark(
               id: jsonSchema.id,
               name: jsonSchema.name,

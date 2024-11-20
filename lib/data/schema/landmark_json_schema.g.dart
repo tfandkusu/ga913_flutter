@@ -29,17 +29,3 @@ Map<String, dynamic> _$$LandmarkJsonSchemaImplToJson(
       'description': instance.description,
       'imageName': instance.imageName,
     };
-
-_$LandmarkJsonSchemaListImpl _$$LandmarkJsonSchemaListImplFromJson(
-        Map<String, dynamic> json) =>
-    _$LandmarkJsonSchemaListImpl(
-      landmarks: (json['landmarks'] as List<dynamic>)
-          .map((e) => LandmarkJsonSchema.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$LandmarkJsonSchemaListImplToJson(
-        _$LandmarkJsonSchemaListImpl instance) =>
-    <String, dynamic>{
-      'landmarks': instance.landmarks,
-    };
