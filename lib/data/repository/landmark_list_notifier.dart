@@ -14,4 +14,13 @@ class LandmarkListNotifier extends _$LandmarkListNotifier {
   void setLandmarkList(List<Landmark> landmarkList) {
     state = landmarkList;
   }
+
+  void setFavorite(int id, bool isFavorite) {
+    state = state.map((landmark) {
+      if (landmark.id == id) {
+        return landmark.copyWith(isFavorite: isFavorite);
+      }
+      return landmark;
+    }).toList();
+  }
 }

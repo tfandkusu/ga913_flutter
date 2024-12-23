@@ -42,5 +42,41 @@ void main() {
       expect(notifier.state, testLandmarks);
       expect(notifier.state.length, 2);
     });
+
+    test('setFavoriteでisFavoriteが更新される', () {
+      final container = ProviderContainer();
+      final notifier = container.read(landmarkListNotifierProvider.notifier);
+
+      final testLandmarks = [
+        const Landmark(
+          id: 1,
+          name: 'テスト地点1',
+          state: '東京都',
+          isFavorite: false,
+          park: 'テスト公園1',
+          description: 'テスト説明1',
+          imageUrl: 'https://example.com/image1.jpg',
+        ),
+        const Landmark(
+          id: 2,
+          name: 'テスト地点2',
+          state: '大阪府',
+          isFavorite: false,
+          park: 'テスト公園2',
+          description: 'テスト説明2',
+          imageUrl: 'https://example.com/image2.jpg',
+        ),
+      ];
+
+      notifier.setLandmarkList(testLandmarks);
+      notifier.setFavorite(1, true);
+
+      expect(
+          notifier.state.firstWhere((landmark) => landmark.id == 1).isFavorite,
+          true);
+      expect(
+          notifier.state.firstWhere((landmark) => landmark.id == 2).isFavorite,
+          false);
+    });
   });
 }
