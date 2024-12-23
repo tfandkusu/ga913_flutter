@@ -7,7 +7,7 @@ part of 'landmark_repository.dart';
 // **************************************************************************
 
 String _$landmarkRepositoryHash() =>
-    r'2197ecd0dba09959322e9ecd794d81783844afa3';
+    r'9525e3d956de19f50c9930743ef56b22892ef06c';
 
 /// See also [landmarkRepository].
 @ProviderFor(landmarkRepository)

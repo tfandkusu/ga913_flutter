@@ -6,17 +6,24 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../model/landmark.dart';
 import '../schema/landmark_json_schema.dart';
+import 'landmark_list_notifier.dart';
 
 part 'landmark_repository.g.dart';
 
 @riverpod
-LandmarkRepository landmarkRepository(Ref ref) => LandmarkRepository();
+LandmarkRepository landmarkRepository(Ref ref) => LandmarkRepository(
+      landmarkListNotifier: ref.read(landmarkListNotifierProvider.notifier),
+    );
 
 class LandmarkRepository {
-  Future<List<Landmark>> getLandmarks() async {
+  final LandmarkListNotifier landmarkListNotifier;
+
+  LandmarkRepository({required this.landmarkListNotifier});
+
+  Future<void> fetchLandmarks() async {
     final jsonString = await rootBundle.loadString('assets/landmarkData.json');
     List<dynamic> jsonListMap = json.decode(jsonString);
-    return jsonListMap
+    final landmarks = jsonListMap
         .map((jsonMap) => LandmarkJsonSchema.fromJson(jsonMap))
         .map((jsonSchema) => Landmark(
               id: jsonSchema.id,
@@ -28,5 +35,7 @@ class LandmarkRepository {
               imageUrl: "assets/${jsonSchema.imageName}.jpg",
             ))
         .toList();
+
+    landmarkListNotifier.setLandmarkList(landmarks);
   }
 }

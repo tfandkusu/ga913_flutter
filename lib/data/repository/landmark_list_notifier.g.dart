@@ -7,7 +7,7 @@ part of 'landmark_list_notifier.dart';
 // **************************************************************************
 
 String _$landmarkListNotifierHash() =>
-    r'faa664dacf1b1ca66c847c6609eecbd62207a974';
+    r'6d17120be163c2cdb9e750dc4380df32e34ad3b7';
 
 /// See also [LandmarkListNotifier].
 @ProviderFor(LandmarkListNotifier)

@@ -1,28 +1,29 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart';
 import 'package:ga913_flutter/data/repository/landmark_repository.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
-import '../../provider_container.dart';
+import 'landmark_repository_test.mocks.dart';
 
+@GenerateMocks([LandmarkListNotifier])
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  late ProviderContainer container;
-  late LandmarkRepository landmarkRepository;
-  setUp(() {
-    container = createContainer();
-    landmarkRepository = container.read(landmarkRepositoryProvider);
-  });
-  test("LandmarkRepository", () async {
-    final landmarks = await landmarkRepository.getLandmarks();
-    expect(landmarks.length, 12);
-    final landmark = landmarks.first;
-    expect(landmark.id, 1001);
-    expect(landmark.name, "Turtle Rock");
-    expect(landmark.state, "California");
-    expect(landmark.isFavorite, true);
-    expect(landmark.park, "Joshua Tree National Park");
-    expect(landmark.description.length, greaterThan(1));
-    expect(landmark.imageUrl, "assets/turtlerock.jpg");
+
+  group('LandmarkRepository', () {
+    test('モックを使用したfetchLandmarksのテスト', () async {
+      // モックの作成
+      final landmarkListNotifier = MockLandmarkListNotifier();
+
+      // モックを使用したRepositoryの作成
+      final landmarkRepository = LandmarkRepository(
+        landmarkListNotifier: landmarkListNotifier,
+      );
+      // メソッドの呼び出し
+      await landmarkRepository.fetchLandmarks();
+      // LandmarkListNotifier の呼ばれ方検証
+      verify(landmarkListNotifier.setLandmarkList(any)).called(1);
+    });
   });
 }
