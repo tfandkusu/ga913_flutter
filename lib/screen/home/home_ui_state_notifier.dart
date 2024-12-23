@@ -8,7 +8,7 @@ part 'home_ui_state_notifier.g.dart';
 class HomeUiModelNotifier extends _$HomeUiModelNotifier {
   @override
   HomeUiModel build() => const HomeUiModel(
-        progress: false,
+        progress: true,
         favoritesOnly: false,
         landmarks: [],
       );

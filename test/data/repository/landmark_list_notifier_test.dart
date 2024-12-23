@@ -1,7 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart';
-import 'package:ga913_flutter/model/landmark.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../mock/landmark_mock_data.dart';
 
 void main() {
   group('LandmarkListNotifier', () {
@@ -16,66 +17,32 @@ void main() {
       final container = ProviderContainer();
       final notifier = container.read(landmarkListNotifierProvider.notifier);
 
-      final testLandmarks = [
-        const Landmark(
-          id: 1,
-          name: 'テスト地点1',
-          state: '東京都',
-          isFavorite: false,
-          park: 'テスト公園1',
-          description: 'テスト説明1',
-          imageUrl: 'https://example.com/image1.jpg',
-        ),
-        const Landmark(
-          id: 2,
-          name: 'テスト地点2',
-          state: '大阪府',
-          isFavorite: true,
-          park: 'テスト公園2',
-          description: 'テスト説明2',
-          imageUrl: 'https://example.com/image2.jpg',
-        ),
-      ];
+      final landmarks = LandmarkMockData.landmarks;
 
-      notifier.setLandmarkList(testLandmarks);
+      notifier.setLandmarkList(landmarks);
 
-      expect(notifier.state, testLandmarks);
-      expect(notifier.state.length, 2);
+      expect(notifier.state, landmarks);
+      expect(notifier.state.length, 3);
     });
 
     test('setFavoriteでisFavoriteが更新される', () {
       final container = ProviderContainer();
       final notifier = container.read(landmarkListNotifierProvider.notifier);
 
-      final testLandmarks = [
-        const Landmark(
-          id: 1,
-          name: 'テスト地点1',
-          state: '東京都',
-          isFavorite: false,
-          park: 'テスト公園1',
-          description: 'テスト説明1',
-          imageUrl: 'https://example.com/image1.jpg',
-        ),
-        const Landmark(
-          id: 2,
-          name: 'テスト地点2',
-          state: '大阪府',
-          isFavorite: false,
-          park: 'テスト公園2',
-          description: 'テスト説明2',
-          imageUrl: 'https://example.com/image2.jpg',
-        ),
-      ];
+      final landmarks = LandmarkMockData.landmarks;
 
-      notifier.setLandmarkList(testLandmarks);
-      notifier.setFavorite(1, true);
+      notifier.setLandmarkList(landmarks);
+      notifier.setFavorite(1001, true);
 
       expect(
-          notifier.state.firstWhere((landmark) => landmark.id == 1).isFavorite,
+          notifier.state
+              .firstWhere((landmark) => landmark.id == 1001)
+              .isFavorite,
           true);
       expect(
-          notifier.state.firstWhere((landmark) => landmark.id == 2).isFavorite,
+          notifier.state
+              .firstWhere((landmark) => landmark.id == 1002)
+              .isFavorite,
           false);
     });
   });
