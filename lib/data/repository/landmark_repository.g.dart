@@ -1,27 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'my_home_ui_state_notifier.dart';
+part of 'landmark_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$myHomeUiModelNotifierHash() =>
-    r'a1c9a4545bd5197f3f2e8caf4ca2e12a1b74f687';
+String _$landmarkRepositoryHash() =>
+    r'9525e3d956de19f50c9930743ef56b22892ef06c';
 
-/// See also [MyHomeUiModelNotifier].
-@ProviderFor(MyHomeUiModelNotifier)
-final myHomeUiModelNotifierProvider =
-    AutoDisposeNotifierProvider<MyHomeUiModelNotifier, MyHomeUiModel>.internal(
-  MyHomeUiModelNotifier.new,
-  name: r'myHomeUiModelNotifierProvider',
+/// See also [landmarkRepository].
+@ProviderFor(landmarkRepository)
+final landmarkRepositoryProvider =
+    AutoDisposeProvider<LandmarkRepository>.internal(
+  landmarkRepository,
+  name: r'landmarkRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$myHomeUiModelNotifierHash,
+      : _$landmarkRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$MyHomeUiModelNotifier = AutoDisposeNotifier<MyHomeUiModel>;
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef LandmarkRepositoryRef = AutoDisposeProviderRef<LandmarkRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
