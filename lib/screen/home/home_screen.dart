@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/gen/l10n/l10n.dart';
 import 'package:ga913_flutter/screen/home/home_event_handler.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -9,6 +10,7 @@ class HomeScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l = L10n.of(context);
     final uiModel = ref.watch(homeUiModelProvider);
     final eventHandler = ref.read(homeEventHandlerProvider);
     useEffect(() {
@@ -19,7 +21,7 @@ class HomeScreen extends HookConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Landmarks"),
+        title: Text(l.homeTitle),
       ),
       body: uiModel.progress // ここで条件分岐
           ? const Center(
@@ -29,7 +31,7 @@ class HomeScreen extends HookConsumerWidget {
           : Column(
               children: [
                 SwitchListTile(
-                  title: const Text('Favorites only'),
+                  title: Text(l.homeFavoritesOnly),
                   value: uiModel.favoritesOnly,
                   onChanged: (value) {
                     eventHandler.onFavoritesOnlyChanged(value);
