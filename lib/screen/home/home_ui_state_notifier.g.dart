@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'my_home_ui_state_notifier.dart';
+part of 'home_ui_state_notifier.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$myHomeUiModelNotifierHash() =>
-    r'a1c9a4545bd5197f3f2e8caf4ca2e12a1b74f687';
+String _$homeUiModelNotifierHash() =>
+    r'2a64cf4934e9b1874ef18c582dfb6ffca0542c5c';
 
-/// See also [MyHomeUiModelNotifier].
-@ProviderFor(MyHomeUiModelNotifier)
-final myHomeUiModelNotifierProvider =
-    AutoDisposeNotifierProvider<MyHomeUiModelNotifier, MyHomeUiModel>.internal(
-  MyHomeUiModelNotifier.new,
-  name: r'myHomeUiModelNotifierProvider',
+/// See also [HomeUiModelNotifier].
+@ProviderFor(HomeUiModelNotifier)
+final homeUiModelNotifierProvider =
+    AutoDisposeNotifierProvider<HomeUiModelNotifier, HomeUiModel>.internal(
+  HomeUiModelNotifier.new,
+  name: r'homeUiModelNotifierProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$myHomeUiModelNotifierHash,
+      : _$homeUiModelNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$MyHomeUiModelNotifier = AutoDisposeNotifier<MyHomeUiModel>;
+typedef _$HomeUiModelNotifier = AutoDisposeNotifier<HomeUiModel>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
