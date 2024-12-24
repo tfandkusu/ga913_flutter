@@ -40,6 +40,11 @@ class HomeScreen extends HookConsumerWidget {
                 ),
                 Expanded(
                   child: ListView.separated(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context)
+                          .viewPadding
+                          .bottom, // システムのナビゲーションバーの高さを取得
+                    ),
                     itemCount: uiModel.landmarks.length,
                     separatorBuilder: (context, index) => const Divider(
                       height: 1,
