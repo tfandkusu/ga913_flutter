@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/app_router.dart';
 import 'package:ga913_flutter/gen/l10n/l10n.dart';
+import 'package:ga913_flutter/model/landmark.dart';
 import 'package:ga913_flutter/screen/home/home_event_handler.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -53,30 +55,38 @@ class HomeScreen extends HookConsumerWidget {
                     ), // 区切り線を追加
                     itemBuilder: (context, index) {
                       final landmark = uiModel.landmarks[index];
-                      return Container(
-                        margin: const EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            Image.asset(landmark.imageUrl,
-                                width: 64, height: 64, fit: BoxFit.cover),
-                            const SizedBox(width: 16),
-                            Expanded(
-                              child: Text(
-                                landmark.name,
-                                style: Theme.of(context).textTheme.bodyLarge,
-                              ),
-                            ),
-                            if (landmark.isFavorite)
-                              Icon(Icons.star,
-                                  color: Theme.of(context).colorScheme.primary),
-                          ],
-                        ),
-                      );
+                      return _buildLandmarkItem(context, landmark);
                     },
                   ),
                 ),
               ],
             ),
+    );
+  }
+
+  Widget _buildLandmarkItem(BuildContext context, Landmark landmark) {
+    return InkWell(
+      onTap: () {
+        context.router.push(const DetailRoute());
+      },
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: [
+            Image.asset(landmark.imageUrl,
+                width: 64, height: 64, fit: BoxFit.cover),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Text(
+                landmark.name,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+            if (landmark.isFavorite)
+              Icon(Icons.star, color: Theme.of(context).colorScheme.primary),
+          ],
+        ),
+      ),
     );
   }
 }
