@@ -5,6 +5,7 @@ import 'package:ga913_flutter/screen/home/home_ui_state_notifier.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../data/mock/landmark_mock_data.dart';
 import 'home_event_handler_test.mocks.dart';
 
 @GenerateMocks([HomeUiModelNotifier, LandmarkRepository])
@@ -43,6 +44,11 @@ void main() {
       // 別の値でも検証
       eventHandler.onFavoritesOnlyChanged(false);
       verify(mockHomeUiModelNotifier.setFavoritesOnly(false)).called(1);
+    });
+
+    test('onLandmarkClickedでDetailRouteに遷移', () {
+      final landmark = LandmarkMockData.landmarks[0];
+      eventHandler.onLandmarkClicked(landmark);
     });
   });
 }
