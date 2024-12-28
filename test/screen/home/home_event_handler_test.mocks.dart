@@ -3,18 +3,16 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i10;
+import 'dart:async' as _i8;
 
-import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:ga913_flutter/app_router.dart' as _i5;
 import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart'
     as _i4;
-import 'package:ga913_flutter/data/repository/landmark_repository.dart' as _i9;
-import 'package:ga913_flutter/model/landmark.dart' as _i8;
+import 'package:ga913_flutter/data/repository/landmark_repository.dart' as _i7;
+import 'package:ga913_flutter/model/landmark.dart' as _i6;
 import 'package:ga913_flutter/screen/home/home_ui_model.dart' as _i3;
-import 'package:ga913_flutter/screen/home/home_ui_state_notifier.dart' as _i7;
-import 'package:hooks_riverpod/hooks_riverpod.dart' as _i2;
+import 'package:ga913_flutter/screen/home/home_ui_state_notifier.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:riverpod_annotation/riverpod_annotation.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -61,29 +59,11 @@ class _FakeLandmarkListNotifier_2 extends _i1.SmartFake
         );
 }
 
-/// A class which mocks [MyRouter].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockMyRouter extends _i1.Mock implements _i5.MyRouter {
-  MockMyRouter() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  void push(_i6.PageRouteInfo<dynamic>? route) => super.noSuchMethod(
-        Invocation.method(
-          #push,
-          [route],
-        ),
-        returnValueForMissingStub: null,
-      );
-}
-
 /// A class which mocks [HomeUiModelNotifier].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockHomeUiModelNotifier extends _i1.Mock
-    implements _i7.HomeUiModelNotifier {
+    implements _i5.HomeUiModelNotifier {
   MockHomeUiModelNotifier() {
     _i1.throwOnMissingStub(this);
   }
@@ -150,7 +130,7 @@ class MockHomeUiModelNotifier extends _i1.Mock
       );
 
   @override
-  void setLandmarks(List<_i8.Landmark>? landmarks) => super.noSuchMethod(
+  void setLandmarks(List<_i6.Landmark>? landmarks) => super.noSuchMethod(
         Invocation.method(
           #setLandmarks,
           [landmarks],
@@ -199,7 +179,7 @@ class MockHomeUiModelNotifier extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockLandmarkRepository extends _i1.Mock
-    implements _i9.LandmarkRepository {
+    implements _i7.LandmarkRepository {
   MockLandmarkRepository() {
     _i1.throwOnMissingStub(this);
   }
@@ -214,12 +194,12 @@ class MockLandmarkRepository extends _i1.Mock
       ) as _i4.LandmarkListNotifier);
 
   @override
-  _i10.Future<void> fetchLandmarks() => (super.noSuchMethod(
+  _i8.Future<void> fetchLandmarks() => (super.noSuchMethod(
         Invocation.method(
           #fetchLandmarks,
           [],
         ),
-        returnValue: _i10.Future<void>.value(),
-        returnValueForMissingStub: _i10.Future<void>.value(),
-      ) as _i10.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 }

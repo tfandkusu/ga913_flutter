@@ -15,7 +15,7 @@ class HomeScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l = L10n.of(context);
     final uiModel = ref.watch(homeUiModelProvider);
-    final eventHandler = ref.read(homeEventHandlerProvider(context));
+    final eventHandler = ref.read(homeEventHandlerProvider);
     useEffect(() {
       eventHandler.onCreate();
       return null;
@@ -68,7 +68,7 @@ class HomeScreen extends HookConsumerWidget {
       BuildContext context, HomeEventHandler eventHandler, Landmark landmark) {
     return InkWell(
       onTap: () {
-        eventHandler.onLandmarkClicked();
+        eventHandler.onLandmarkClicked(landmark);
       },
       child: Container(
         padding: const EdgeInsets.all(16),

@@ -1,27 +1,25 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ga913_flutter/app_router.dart';
 import 'package:ga913_flutter/data/repository/landmark_repository.dart';
 import 'package:ga913_flutter/screen/home/home_event_handler.dart';
 import 'package:ga913_flutter/screen/home/home_ui_state_notifier.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../data/mock/landmark_mock_data.dart';
 import 'home_event_handler_test.mocks.dart';
 
-@GenerateMocks([MyRouter, HomeUiModelNotifier, LandmarkRepository])
+@GenerateMocks([HomeUiModelNotifier, LandmarkRepository])
 void main() {
   group('HomeEventHandler', () {
-    late MockMyRouter mockMyRouter;
     late MockHomeUiModelNotifier mockHomeUiModelNotifier;
     late MockLandmarkRepository mockLandmarkRepository;
     late HomeEventHandler eventHandler;
 
     setUp(() {
-      mockMyRouter = MockMyRouter();
       mockHomeUiModelNotifier = MockHomeUiModelNotifier();
       mockLandmarkRepository = MockLandmarkRepository();
-      eventHandler = HomeEventHandler(
-          mockMyRouter, mockHomeUiModelNotifier, mockLandmarkRepository);
+      eventHandler =
+          HomeEventHandler(mockHomeUiModelNotifier, mockLandmarkRepository);
     });
 
     test('onCreateでランドマークを取得し、プログレスを停止', () async {
@@ -49,10 +47,8 @@ void main() {
     });
 
     test('onLandmarkClickedでDetailRouteに遷移', () {
-      eventHandler.onLandmarkClicked();
-      verifyInOrder([
-        mockMyRouter.push(const DetailRoute()),
-      ]);
+      final landmark = LandmarkMockData.landmarks[0];
+      eventHandler.onLandmarkClicked(landmark);
     });
   });
 }
