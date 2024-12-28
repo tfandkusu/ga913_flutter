@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_event_handler.dart';
+part of 'app_router.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeEventHandlerHash() => r'd4fed53eb85647dbad60da248a0cd0adbfd6ab6d';
+String _$myRouterHash() => r'bcb64698801e3f5bd0453169e0ac8debdbaf11c1';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,27 +29,27 @@ class _SystemHash {
   }
 }
 
-/// See also [homeEventHandler].
-@ProviderFor(homeEventHandler)
-const homeEventHandlerProvider = HomeEventHandlerFamily();
+/// See also [myRouter].
+@ProviderFor(myRouter)
+const myRouterProvider = MyRouterFamily();
 
-/// See also [homeEventHandler].
-class HomeEventHandlerFamily extends Family<HomeEventHandler> {
-  /// See also [homeEventHandler].
-  const HomeEventHandlerFamily();
+/// See also [myRouter].
+class MyRouterFamily extends Family<MyRouter> {
+  /// See also [myRouter].
+  const MyRouterFamily();
 
-  /// See also [homeEventHandler].
-  HomeEventHandlerProvider call(
+  /// See also [myRouter].
+  MyRouterProvider call(
     BuildContext context,
   ) {
-    return HomeEventHandlerProvider(
+    return MyRouterProvider(
       context,
     );
   }
 
   @override
-  HomeEventHandlerProvider getProviderOverride(
-    covariant HomeEventHandlerProvider provider,
+  MyRouterProvider getProviderOverride(
+    covariant MyRouterProvider provider,
   ) {
     return call(
       provider.context,
@@ -68,32 +68,31 @@ class HomeEventHandlerFamily extends Family<HomeEventHandler> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'homeEventHandlerProvider';
+  String? get name => r'myRouterProvider';
 }
 
-/// See also [homeEventHandler].
-class HomeEventHandlerProvider extends AutoDisposeProvider<HomeEventHandler> {
-  /// See also [homeEventHandler].
-  HomeEventHandlerProvider(
+/// See also [myRouter].
+class MyRouterProvider extends AutoDisposeProvider<MyRouter> {
+  /// See also [myRouter].
+  MyRouterProvider(
     BuildContext context,
   ) : this._internal(
-          (ref) => homeEventHandler(
-            ref as HomeEventHandlerRef,
+          (ref) => myRouter(
+            ref as MyRouterRef,
             context,
           ),
-          from: homeEventHandlerProvider,
-          name: r'homeEventHandlerProvider',
+          from: myRouterProvider,
+          name: r'myRouterProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$homeEventHandlerHash,
-          dependencies: HomeEventHandlerFamily._dependencies,
-          allTransitiveDependencies:
-              HomeEventHandlerFamily._allTransitiveDependencies,
+                  : _$myRouterHash,
+          dependencies: MyRouterFamily._dependencies,
+          allTransitiveDependencies: MyRouterFamily._allTransitiveDependencies,
           context: context,
         );
 
-  HomeEventHandlerProvider._internal(
+  MyRouterProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -107,12 +106,12 @@ class HomeEventHandlerProvider extends AutoDisposeProvider<HomeEventHandler> {
 
   @override
   Override overrideWith(
-    HomeEventHandler Function(HomeEventHandlerRef provider) create,
+    MyRouter Function(MyRouterRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: HomeEventHandlerProvider._internal(
-        (ref) => create(ref as HomeEventHandlerRef),
+      override: MyRouterProvider._internal(
+        (ref) => create(ref as MyRouterRef),
         from: from,
         name: null,
         dependencies: null,
@@ -124,13 +123,13 @@ class HomeEventHandlerProvider extends AutoDisposeProvider<HomeEventHandler> {
   }
 
   @override
-  AutoDisposeProviderElement<HomeEventHandler> createElement() {
-    return _HomeEventHandlerProviderElement(this);
+  AutoDisposeProviderElement<MyRouter> createElement() {
+    return _MyRouterProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is HomeEventHandlerProvider && other.context == context;
+    return other is MyRouterProvider && other.context == context;
   }
 
   @override
@@ -144,18 +143,17 @@ class HomeEventHandlerProvider extends AutoDisposeProvider<HomeEventHandler> {
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-mixin HomeEventHandlerRef on AutoDisposeProviderRef<HomeEventHandler> {
+mixin MyRouterRef on AutoDisposeProviderRef<MyRouter> {
   /// The parameter `context` of this provider.
   BuildContext get context;
 }
 
-class _HomeEventHandlerProviderElement
-    extends AutoDisposeProviderElement<HomeEventHandler>
-    with HomeEventHandlerRef {
-  _HomeEventHandlerProviderElement(super.provider);
+class _MyRouterProviderElement extends AutoDisposeProviderElement<MyRouter>
+    with MyRouterRef {
+  _MyRouterProviderElement(super.provider);
 
   @override
-  BuildContext get context => (origin as HomeEventHandlerProvider).context;
+  BuildContext get context => (origin as MyRouterProvider).context;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
