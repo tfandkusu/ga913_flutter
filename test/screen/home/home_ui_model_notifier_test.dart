@@ -27,6 +27,7 @@ void main() {
             progress: true,
             favoritesOnly: false,
             landmarks: [],
+            navigateToDetail: null,
           ));
     });
 
@@ -55,6 +56,13 @@ void main() {
       final uiModel = container.read(homeUiModelNotifierProvider);
 
       expect(uiModel.landmarks, landmarks);
+    });
+
+    test('navigateToDetailでnavigateToDetailが更新される', () {
+      final landmark = LandmarkMockData.landmarks[0];
+      notifier.navigateToDetail(landmark);
+      final uiModel = container.read(homeUiModelNotifierProvider);
+      expect(uiModel.navigateToDetail, landmark);
     });
   });
 }

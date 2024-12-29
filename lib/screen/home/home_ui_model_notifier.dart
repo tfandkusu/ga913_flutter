@@ -1,16 +1,18 @@
 import 'package:ga913_flutter/model/landmark.dart';
+import 'package:ga913_flutter/screen/common/has_effect.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_ui_model_notifier.g.dart';
 
 @riverpod
-class HomeUiModelNotifier extends _$HomeUiModelNotifier {
+class HomeUiModelNotifier extends _$HomeUiModelNotifier implements HasEffect {
   @override
   HomeUiModel build() => const HomeUiModel(
         progress: true,
         favoritesOnly: false,
         landmarks: [],
+        navigateToDetail: null,
       );
 
   void setProgress(bool progress) {
@@ -23,5 +25,14 @@ class HomeUiModelNotifier extends _$HomeUiModelNotifier {
 
   void setLandmarks(List<Landmark> landmarks) {
     state = state.copyWith(landmarks: landmarks);
+  }
+
+  void navigateToDetail(Landmark? landmark) {
+    state = state.copyWith(navigateToDetail: landmark);
+  }
+
+  @override
+  void clearEffects() {
+    state = state.copyWith(navigateToDetail: null);
   }
 }

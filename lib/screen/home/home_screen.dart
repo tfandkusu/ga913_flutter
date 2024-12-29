@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/app_router.dart';
 import 'package:ga913_flutter/gen/l10n/l10n.dart';
 import 'package:ga913_flutter/model/landmark.dart';
+import 'package:ga913_flutter/screen/common/observe_effect.dart';
 import 'package:ga913_flutter/screen/home/home_event_handler.dart';
+import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -20,6 +23,13 @@ class HomeScreen extends HookConsumerWidget {
       eventHandler.onCreate();
       return null;
     }, []);
+    observeEffect(ref, homeUiModelNotifierProvider, eventHandler, (uiModel) {
+      if (uiModel.navigateToDetail != null) {
+        context.router.push(DetailRoute(landmark: uiModel.navigateToDetail!));
+        return true;
+      }
+      return false;
+    });
 
     return Scaffold(
       appBar: AppBar(

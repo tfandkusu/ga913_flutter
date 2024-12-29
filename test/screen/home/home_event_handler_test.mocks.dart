@@ -139,6 +139,24 @@ class MockHomeUiModelNotifier extends _i1.Mock
       );
 
   @override
+  void navigateToDetail(_i6.Landmark? landmark) => super.noSuchMethod(
+        Invocation.method(
+          #navigateToDetail,
+          [landmark],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void clearEffects() => super.noSuchMethod(
+        Invocation.method(
+          #clearEffects,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
   void listenSelf(
     void Function(
       _i3.HomeUiModel?,
