@@ -10,7 +10,7 @@ import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart'
 import 'package:ga913_flutter/data/repository/landmark_repository.dart' as _i7;
 import 'package:ga913_flutter/model/landmark.dart' as _i6;
 import 'package:ga913_flutter/screen/home/home_ui_model.dart' as _i3;
-import 'package:ga913_flutter/screen/home/home_ui_state_notifier.dart' as _i5;
+import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:riverpod_annotation/riverpod_annotation.dart' as _i2;
 
