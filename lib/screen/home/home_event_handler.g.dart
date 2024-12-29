@@ -6,7 +6,7 @@ part of 'home_event_handler.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeEventHandlerHash() => r'386c79234170532e71a8e7ee3f16a9ae0863aa09';
+String _$homeEventHandlerHash() => r'f33ee8d886be2c57d350a784f1c9b07a049fdf0b';
 
 /// See also [homeEventHandler].
 @ProviderFor(homeEventHandler)
