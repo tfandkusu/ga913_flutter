@@ -1,6 +1,6 @@
 import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model.dart';
-import 'package:ga913_flutter/screen/home/home_ui_state_notifier.dart';
+import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

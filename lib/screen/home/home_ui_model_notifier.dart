@@ -2,7 +2,7 @@ import 'package:ga913_flutter/model/landmark.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'home_ui_state_notifier.g.dart';
+part 'home_ui_model_notifier.g.dart';
 
 @riverpod
 class HomeUiModelNotifier extends _$HomeUiModelNotifier {

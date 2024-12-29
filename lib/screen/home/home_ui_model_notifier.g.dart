@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_ui_state_notifier.dart';
+part of 'home_ui_model_notifier.dart';
 
 // **************************************************************************
 // RiverpodGenerator
