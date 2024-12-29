@@ -3,14 +3,16 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i8;
+import 'dart:async' as _i10;
 
 import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart'
     as _i4;
-import 'package:ga913_flutter/data/repository/landmark_repository.dart' as _i7;
+import 'package:ga913_flutter/data/repository/landmark_repository.dart' as _i9;
 import 'package:ga913_flutter/model/landmark.dart' as _i6;
+import 'package:ga913_flutter/screen/home/home_effect.dart' as _i8;
 import 'package:ga913_flutter/screen/home/home_ui_model.dart' as _i3;
 import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart' as _i5;
+import 'package:ga913_flutter/util/effect_notifier.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:riverpod_annotation/riverpod_annotation.dart' as _i2;
 
@@ -175,11 +177,93 @@ class MockHomeUiModelNotifier extends _i1.Mock
       ) as bool);
 }
 
+/// A class which mocks [EffectNotifier].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockEffectNotifier extends _i1.Mock implements _i7.EffectNotifier {
+  MockEffectNotifier() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i2.AutoDisposeNotifierProviderRef<_i8.HomeEffect?> get ref =>
+      (super.noSuchMethod(
+        Invocation.getter(#ref),
+        returnValue: _FakeAutoDisposeNotifierProviderRef_0<_i8.HomeEffect?>(
+          this,
+          Invocation.getter(#ref),
+        ),
+      ) as _i2.AutoDisposeNotifierProviderRef<_i8.HomeEffect?>);
+
+  @override
+  set state(_i8.HomeEffect? value) => super.noSuchMethod(
+        Invocation.setter(
+          #state,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void setEffect(_i8.HomeEffect? effect) => super.noSuchMethod(
+        Invocation.method(
+          #setEffect,
+          [effect],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void clearEffect() => super.noSuchMethod(
+        Invocation.method(
+          #clearEffect,
+          [],
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  void listenSelf(
+    void Function(
+      _i8.HomeEffect?,
+      _i8.HomeEffect?,
+    )? listener, {
+    void Function(
+      Object,
+      StackTrace,
+    )? onError,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #listenSelf,
+          [listener],
+          {#onError: onError},
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  bool updateShouldNotify(
+    _i8.HomeEffect? previous,
+    _i8.HomeEffect? next,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateShouldNotify,
+          [
+            previous,
+            next,
+          ],
+        ),
+        returnValue: false,
+      ) as bool);
+}
+
 /// A class which mocks [LandmarkRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockLandmarkRepository extends _i1.Mock
-    implements _i7.LandmarkRepository {
+    implements _i9.LandmarkRepository {
   MockLandmarkRepository() {
     _i1.throwOnMissingStub(this);
   }
@@ -194,12 +278,12 @@ class MockLandmarkRepository extends _i1.Mock
       ) as _i4.LandmarkListNotifier);
 
   @override
-  _i8.Future<void> fetchLandmarks() => (super.noSuchMethod(
+  _i10.Future<void> fetchLandmarks() => (super.noSuchMethod(
         Invocation.method(
           #fetchLandmarks,
           [],
         ),
-        returnValue: _i8.Future<void>.value(),
-        returnValueForMissingStub: _i8.Future<void>.value(),
-      ) as _i8.Future<void>);
+        returnValue: _i10.Future<void>.value(),
+        returnValueForMissingStub: _i10.Future<void>.value(),
+      ) as _i10.Future<void>);
 }

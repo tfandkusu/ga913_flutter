@@ -1,10 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/app_router.dart';
 import 'package:ga913_flutter/gen/l10n/l10n.dart';
 import 'package:ga913_flutter/model/landmark.dart';
 import 'package:ga913_flutter/screen/home/home_event_handler.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_provider.dart';
+import 'package:ga913_flutter/util/observe_effect.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @RoutePage()
@@ -20,6 +22,11 @@ class HomeScreen extends HookConsumerWidget {
       eventHandler.onCreate();
       return null;
     }, []);
+    observeEffect(ref, (effect) {
+      effect.when(navigateToDetail: (landmark) {
+        context.router.push(DetailRoute(landmark: landmark));
+      });
+    });
 
     return Scaffold(
       appBar: AppBar(
