@@ -19,6 +19,7 @@ mixin _$HomeUiModel {
   bool get progress => throw _privateConstructorUsedError;
   bool get favoritesOnly => throw _privateConstructorUsedError;
   List<Landmark> get landmarks => throw _privateConstructorUsedError;
+  Landmark? get navigateToDetail => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -33,7 +34,13 @@ abstract class $HomeUiModelCopyWith<$Res> {
           HomeUiModel value, $Res Function(HomeUiModel) then) =
       _$HomeUiModelCopyWithImpl<$Res, HomeUiModel>;
   @useResult
-  $Res call({bool progress, bool favoritesOnly, List<Landmark> landmarks});
+  $Res call(
+      {bool progress,
+      bool favoritesOnly,
+      List<Landmark> landmarks,
+      Landmark? navigateToDetail});
+
+  $LandmarkCopyWith<$Res>? get navigateToDetail;
 }
 
 /// @nodoc
@@ -54,6 +61,7 @@ class _$HomeUiModelCopyWithImpl<$Res, $Val extends HomeUiModel>
     Object? progress = null,
     Object? favoritesOnly = null,
     Object? landmarks = null,
+    Object? navigateToDetail = freezed,
   }) {
     return _then(_value.copyWith(
       progress: null == progress
@@ -68,7 +76,25 @@ class _$HomeUiModelCopyWithImpl<$Res, $Val extends HomeUiModel>
           ? _value.landmarks
           : landmarks // ignore: cast_nullable_to_non_nullable
               as List<Landmark>,
+      navigateToDetail: freezed == navigateToDetail
+          ? _value.navigateToDetail
+          : navigateToDetail // ignore: cast_nullable_to_non_nullable
+              as Landmark?,
     ) as $Val);
+  }
+
+  /// Create a copy of HomeUiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LandmarkCopyWith<$Res>? get navigateToDetail {
+    if (_value.navigateToDetail == null) {
+      return null;
+    }
+
+    return $LandmarkCopyWith<$Res>(_value.navigateToDetail!, (value) {
+      return _then(_value.copyWith(navigateToDetail: value) as $Val);
+    });
   }
 }
 
@@ -80,7 +106,14 @@ abstract class _$$HomeUiModelImplCopyWith<$Res>
       __$$HomeUiModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool progress, bool favoritesOnly, List<Landmark> landmarks});
+  $Res call(
+      {bool progress,
+      bool favoritesOnly,
+      List<Landmark> landmarks,
+      Landmark? navigateToDetail});
+
+  @override
+  $LandmarkCopyWith<$Res>? get navigateToDetail;
 }
 
 /// @nodoc
@@ -99,6 +132,7 @@ class __$$HomeUiModelImplCopyWithImpl<$Res>
     Object? progress = null,
     Object? favoritesOnly = null,
     Object? landmarks = null,
+    Object? navigateToDetail = freezed,
   }) {
     return _then(_$HomeUiModelImpl(
       progress: null == progress
@@ -113,6 +147,10 @@ class __$$HomeUiModelImplCopyWithImpl<$Res>
           ? _value._landmarks
           : landmarks // ignore: cast_nullable_to_non_nullable
               as List<Landmark>,
+      navigateToDetail: freezed == navigateToDetail
+          ? _value.navigateToDetail
+          : navigateToDetail // ignore: cast_nullable_to_non_nullable
+              as Landmark?,
     ));
   }
 }
@@ -123,7 +161,8 @@ class _$HomeUiModelImpl implements _HomeUiModel {
   const _$HomeUiModelImpl(
       {required this.progress,
       required this.favoritesOnly,
-      required final List<Landmark> landmarks})
+      required final List<Landmark> landmarks,
+      required this.navigateToDetail})
       : _landmarks = landmarks;
 
   @override
@@ -139,8 +178,11 @@ class _$HomeUiModelImpl implements _HomeUiModel {
   }
 
   @override
+  final Landmark? navigateToDetail;
+
+  @override
   String toString() {
-    return 'HomeUiModel(progress: $progress, favoritesOnly: $favoritesOnly, landmarks: $landmarks)';
+    return 'HomeUiModel(progress: $progress, favoritesOnly: $favoritesOnly, landmarks: $landmarks, navigateToDetail: $navigateToDetail)';
   }
 
   @override
@@ -153,12 +195,14 @@ class _$HomeUiModelImpl implements _HomeUiModel {
             (identical(other.favoritesOnly, favoritesOnly) ||
                 other.favoritesOnly == favoritesOnly) &&
             const DeepCollectionEquality()
-                .equals(other._landmarks, _landmarks));
+                .equals(other._landmarks, _landmarks) &&
+            (identical(other.navigateToDetail, navigateToDetail) ||
+                other.navigateToDetail == navigateToDetail));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, progress, favoritesOnly,
-      const DeepCollectionEquality().hash(_landmarks));
+      const DeepCollectionEquality().hash(_landmarks), navigateToDetail);
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -173,7 +217,8 @@ abstract class _HomeUiModel implements HomeUiModel {
   const factory _HomeUiModel(
       {required final bool progress,
       required final bool favoritesOnly,
-      required final List<Landmark> landmarks}) = _$HomeUiModelImpl;
+      required final List<Landmark> landmarks,
+      required final Landmark? navigateToDetail}) = _$HomeUiModelImpl;
 
   @override
   bool get progress;
@@ -181,6 +226,8 @@ abstract class _HomeUiModel implements HomeUiModel {
   bool get favoritesOnly;
   @override
   List<Landmark> get landmarks;
+  @override
+  Landmark? get navigateToDetail;
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.

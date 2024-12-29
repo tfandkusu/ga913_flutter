@@ -1,12 +1,13 @@
 import 'package:ga913_flutter/data/repository/landmark_repository.dart';
 import 'package:ga913_flutter/model/landmark.dart';
+import 'package:ga913_flutter/screen/common/has_effect.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_event_handler.g.dart';
 
-class HomeEventHandler {
+class HomeEventHandler implements HasEffect {
   final HomeUiModelNotifier _homeUiModelNotifier;
   final LandmarkRepository _landmarkRepository;
 
@@ -21,7 +22,14 @@ class HomeEventHandler {
     _homeUiModelNotifier.setFavoritesOnly(favoritesOnly);
   }
 
-  void onLandmarkClicked(Landmark landmark) {}
+  void onLandmarkClicked(Landmark landmark) {
+    _homeUiModelNotifier.navigateToDetail(landmark);
+  }
+
+  @override
+  void clearEffects() {
+    _homeUiModelNotifier.clearEffects();
+  }
 }
 
 @riverpod

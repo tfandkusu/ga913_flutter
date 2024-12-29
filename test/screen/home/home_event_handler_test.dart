@@ -46,9 +46,10 @@ void main() {
       verify(mockHomeUiModelNotifier.setFavoritesOnly(false)).called(1);
     });
 
-    test('onLandmarkClickedでDetailRouteに遷移', () {
+    test('onLandmarkClickedでnavigateToDetailが更新される', () {
       final landmark = LandmarkMockData.landmarks[0];
       eventHandler.onLandmarkClicked(landmark);
+      verify(mockHomeUiModelNotifier.navigateToDetail(landmark)).called(1);
     });
   });
 }
