@@ -148,5 +148,29 @@
       "  });",
       "}"
     ]
+  },
+  "UiModelProvider Test Template": {
+    "prefix": "uimodelprovider-test",
+    "body": [
+      "import 'package:flutter_test/flutter_test.dart';",
+      "import 'package:hooks_riverpod/hooks_riverpod.dart';",
+      "",
+      "void main() {",
+      "  group('${1:Name}UiModelProvider', () {",
+      "    late ProviderContainer container;",
+      "",
+      "    setUp(() {",
+      "      container = ProviderContainer();",
+      "    });",
+      "",
+      "    tearDown(() {",
+      "      container.dispose();",
+      "    });",
+      "",
+      "    test('テスト内容', () {",
+      "    });",
+      "  });",
+      "}"
+    ]
   }
-} 
+}
