@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DetailUiModel {
-  Landmark get landmark => throw _privateConstructorUsedError;
+  Landmark? get landmark => throw _privateConstructorUsedError;
 
   /// Create a copy of DetailUiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -31,9 +31,9 @@ abstract class $DetailUiModelCopyWith<$Res> {
           DetailUiModel value, $Res Function(DetailUiModel) then) =
       _$DetailUiModelCopyWithImpl<$Res, DetailUiModel>;
   @useResult
-  $Res call({Landmark landmark});
+  $Res call({Landmark? landmark});
 
-  $LandmarkCopyWith<$Res> get landmark;
+  $LandmarkCopyWith<$Res>? get landmark;
 }
 
 /// @nodoc
@@ -51,13 +51,13 @@ class _$DetailUiModelCopyWithImpl<$Res, $Val extends DetailUiModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? landmark = null,
+    Object? landmark = freezed,
   }) {
     return _then(_value.copyWith(
-      landmark: null == landmark
+      landmark: freezed == landmark
           ? _value.landmark
           : landmark // ignore: cast_nullable_to_non_nullable
-              as Landmark,
+              as Landmark?,
     ) as $Val);
   }
 
@@ -65,8 +65,12 @@ class _$DetailUiModelCopyWithImpl<$Res, $Val extends DetailUiModel>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $LandmarkCopyWith<$Res> get landmark {
-    return $LandmarkCopyWith<$Res>(_value.landmark, (value) {
+  $LandmarkCopyWith<$Res>? get landmark {
+    if (_value.landmark == null) {
+      return null;
+    }
+
+    return $LandmarkCopyWith<$Res>(_value.landmark!, (value) {
       return _then(_value.copyWith(landmark: value) as $Val);
     });
   }
@@ -80,10 +84,10 @@ abstract class _$$DetailUiModelImplCopyWith<$Res>
       __$$DetailUiModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Landmark landmark});
+  $Res call({Landmark? landmark});
 
   @override
-  $LandmarkCopyWith<$Res> get landmark;
+  $LandmarkCopyWith<$Res>? get landmark;
 }
 
 /// @nodoc
@@ -99,13 +103,13 @@ class __$$DetailUiModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? landmark = null,
+    Object? landmark = freezed,
   }) {
     return _then(_$DetailUiModelImpl(
-      landmark: null == landmark
+      landmark: freezed == landmark
           ? _value.landmark
           : landmark // ignore: cast_nullable_to_non_nullable
-              as Landmark,
+              as Landmark?,
     ));
   }
 }
@@ -116,7 +120,7 @@ class _$DetailUiModelImpl implements _DetailUiModel {
   const _$DetailUiModelImpl({required this.landmark});
 
   @override
-  final Landmark landmark;
+  final Landmark? landmark;
 
   @override
   String toString() {
@@ -145,11 +149,11 @@ class _$DetailUiModelImpl implements _DetailUiModel {
 }
 
 abstract class _DetailUiModel implements DetailUiModel {
-  const factory _DetailUiModel({required final Landmark landmark}) =
+  const factory _DetailUiModel({required final Landmark? landmark}) =
       _$DetailUiModelImpl;
 
   @override
-  Landmark get landmark;
+  Landmark? get landmark;
 
   /// Create a copy of DetailUiModel
   /// with the given fields replaced by the non-null parameter values.
