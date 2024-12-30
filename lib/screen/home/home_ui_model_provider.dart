@@ -8,13 +8,13 @@ part 'home_ui_model_provider.g.dart';
 
 @riverpod
 HomeUiModel homeUiModel(Ref ref) {
-  final homeUiModelNotifier = ref.watch(homeUiModelNotifierProvider);
+  final uiModel = ref.watch(homeUiModelNotifierProvider);
   final landmarkList = ref.watch(landmarkListNotifierProvider);
 
   // お気に入りのみフィルタリング
-  final filteredLandmarks = homeUiModelNotifier.favoritesOnly
+  final filteredLandmarks = uiModel.favoritesOnly
       ? landmarkList.where((landmark) => landmark.isFavorite).toList()
       : landmarkList;
 
-  return homeUiModelNotifier.copyWith(landmarks: filteredLandmarks);
+  return uiModel.copyWith(landmarks: filteredLandmarks);
 }
