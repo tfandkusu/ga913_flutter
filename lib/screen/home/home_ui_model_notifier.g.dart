@@ -7,7 +7,7 @@ part of 'home_ui_model_notifier.dart';
 // **************************************************************************
 
 String _$homeUiModelNotifierHash() =>
-    r'72050ca1d9290d78de9c73020ca1926159b0aa38';
+    r'2b01d9853a80e60e09b6e4f7e54702ce8e10b4be';
 
 /// See also [HomeUiModelNotifier].
 @ProviderFor(HomeUiModelNotifier)

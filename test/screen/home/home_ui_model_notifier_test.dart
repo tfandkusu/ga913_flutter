@@ -60,9 +60,9 @@ void main() {
 
     test('navigateToDetailでnavigateToDetailが更新される', () {
       final landmark = LandmarkMockData.landmarks[0];
-      notifier.navigateToDetail(landmark);
+      notifier.navigateToDetail(landmark.id);
       final uiModel = container.read(homeUiModelNotifierProvider);
-      expect(uiModel.navigateToDetail, landmark);
+      expect(uiModel.navigateToDetail, landmark.id);
     });
   });
 }

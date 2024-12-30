@@ -139,10 +139,10 @@ class MockHomeUiModelNotifier extends _i1.Mock
       );
 
   @override
-  void navigateToDetail(_i6.Landmark? landmark) => super.noSuchMethod(
+  void navigateToDetail(int? landmarkId) => super.noSuchMethod(
         Invocation.method(
           #navigateToDetail,
-          [landmark],
+          [landmarkId],
         ),
         returnValueForMissingStub: null,
       );

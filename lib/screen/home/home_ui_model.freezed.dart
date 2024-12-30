@@ -19,7 +19,7 @@ mixin _$HomeUiModel {
   bool get progress => throw _privateConstructorUsedError;
   bool get favoritesOnly => throw _privateConstructorUsedError;
   List<Landmark> get landmarks => throw _privateConstructorUsedError;
-  Landmark? get navigateToDetail => throw _privateConstructorUsedError;
+  int? get navigateToDetail => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -38,9 +38,7 @@ abstract class $HomeUiModelCopyWith<$Res> {
       {bool progress,
       bool favoritesOnly,
       List<Landmark> landmarks,
-      Landmark? navigateToDetail});
-
-  $LandmarkCopyWith<$Res>? get navigateToDetail;
+      int? navigateToDetail});
 }
 
 /// @nodoc
@@ -79,22 +77,8 @@ class _$HomeUiModelCopyWithImpl<$Res, $Val extends HomeUiModel>
       navigateToDetail: freezed == navigateToDetail
           ? _value.navigateToDetail
           : navigateToDetail // ignore: cast_nullable_to_non_nullable
-              as Landmark?,
+              as int?,
     ) as $Val);
-  }
-
-  /// Create a copy of HomeUiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LandmarkCopyWith<$Res>? get navigateToDetail {
-    if (_value.navigateToDetail == null) {
-      return null;
-    }
-
-    return $LandmarkCopyWith<$Res>(_value.navigateToDetail!, (value) {
-      return _then(_value.copyWith(navigateToDetail: value) as $Val);
-    });
   }
 }
 
@@ -110,10 +94,7 @@ abstract class _$$HomeUiModelImplCopyWith<$Res>
       {bool progress,
       bool favoritesOnly,
       List<Landmark> landmarks,
-      Landmark? navigateToDetail});
-
-  @override
-  $LandmarkCopyWith<$Res>? get navigateToDetail;
+      int? navigateToDetail});
 }
 
 /// @nodoc
@@ -150,7 +131,7 @@ class __$$HomeUiModelImplCopyWithImpl<$Res>
       navigateToDetail: freezed == navigateToDetail
           ? _value.navigateToDetail
           : navigateToDetail // ignore: cast_nullable_to_non_nullable
-              as Landmark?,
+              as int?,
     ));
   }
 }
@@ -178,7 +159,7 @@ class _$HomeUiModelImpl implements _HomeUiModel {
   }
 
   @override
-  final Landmark? navigateToDetail;
+  final int? navigateToDetail;
 
   @override
   String toString() {
@@ -218,7 +199,7 @@ abstract class _HomeUiModel implements HomeUiModel {
       {required final bool progress,
       required final bool favoritesOnly,
       required final List<Landmark> landmarks,
-      required final Landmark? navigateToDetail}) = _$HomeUiModelImpl;
+      required final int? navigateToDetail}) = _$HomeUiModelImpl;
 
   @override
   bool get progress;
@@ -227,7 +208,7 @@ abstract class _HomeUiModel implements HomeUiModel {
   @override
   List<Landmark> get landmarks;
   @override
-  Landmark? get navigateToDetail;
+  int? get navigateToDetail;
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.

@@ -25,7 +25,7 @@ class HomeScreen extends HookConsumerWidget {
     }, []);
     observeEffect(ref, homeUiModelNotifierProvider, eventHandler, (uiModel) {
       if (uiModel.navigateToDetail != null) {
-        context.router.push(DetailRoute(landmark: uiModel.navigateToDetail!));
+        context.router.push(DetailRoute(landmarkId: uiModel.navigateToDetail!));
         return true;
       }
       return false;
