@@ -14,4 +14,9 @@ class L10nEn extends L10n {
 
   @override
   String get homeFavoritesOnly => 'Favorites Only';
+
+  @override
+  String about(String name) {
+    return 'About $name';
+  }
 }
