@@ -24,7 +24,7 @@ class DetailScreen extends HookConsumerWidget {
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: _image(landmark.imageUrl),
+                child: _image(context, landmark.imageUrl),
               ),
             ),
             _nameFavorite(context, landmark.name, landmark.isFavorite,
@@ -39,7 +39,8 @@ class DetailScreen extends HookConsumerWidget {
         ));
   }
 
-  Widget _image(String imageUrl) {
+  Widget _image(BuildContext context, String imageUrl) {
+    final theme = Theme.of(context);
     return Material(
       elevation: 8,
       shape: const CircleBorder(),
@@ -47,7 +48,7 @@ class DetailScreen extends HookConsumerWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: Colors.white,
+            color: theme.colorScheme.surface,
             width: 4,
           ),
         ),
