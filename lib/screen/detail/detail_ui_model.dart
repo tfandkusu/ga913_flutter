@@ -6,6 +6,6 @@ part 'detail_ui_model.freezed.dart';
 @freezed
 class DetailUiModel with _$DetailUiModel {
   const factory DetailUiModel({
-    required Landmark? landmark,
+    required Landmark landmark,
   }) = _DetailUiModel;
 }

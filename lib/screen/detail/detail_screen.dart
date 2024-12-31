@@ -16,30 +16,27 @@ class DetailScreen extends HookConsumerWidget {
     final eventHandler = ref.read(detailEventHandlerProvider(_landmarkId));
     final landmark = uiModel.landmark;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(landmark?.name ?? ''),
-      ),
-      body: landmark != null
-          ? ListView(
-              children: [
-                Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: _image(landmark.imageUrl),
-                  ),
-                ),
-                _nameFavorite(context, landmark.name, landmark.isFavorite,
-                    eventHandler.onFavoriteClick),
-                _parkState(context, landmark.park, landmark.state),
-                const Divider(
-                  height: 32,
-                ),
-                _about(context, landmark.name),
-                _description(context, landmark.description),
-              ],
-            )
-          : Container(),
-    );
+        appBar: AppBar(
+          title: Text(landmark.name),
+        ),
+        body: ListView(
+          children: [
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: _image(landmark.imageUrl),
+              ),
+            ),
+            _nameFavorite(context, landmark.name, landmark.isFavorite,
+                eventHandler.onFavoriteClick),
+            _parkState(context, landmark.park, landmark.state),
+            const Divider(
+              height: 32,
+            ),
+            _about(context, landmark.name),
+            _description(context, landmark.description),
+          ],
+        ));
   }
 
   Widget _image(String imageUrl) {
