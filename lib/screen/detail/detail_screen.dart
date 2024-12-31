@@ -1,5 +1,3 @@
-// ignore_for_file: unused_local_variable
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ga913_flutter/gen/l10n/l10n.dart';
@@ -17,8 +15,6 @@ class DetailScreen extends HookConsumerWidget {
     final uiModel = ref.watch(detailUiModelProvider(_landmarkId));
     final eventHandler = ref.read(detailEventHandlerProvider(_landmarkId));
     final landmark = uiModel.landmark;
-    final theme = Theme.of(context);
-    final l = L10n.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(landmark?.name ?? ''),
