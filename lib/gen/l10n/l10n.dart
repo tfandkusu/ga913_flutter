@@ -110,6 +110,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'Favorites Only'**
   String get homeFavoritesOnly;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About {name}'**
+  String about(String name);
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

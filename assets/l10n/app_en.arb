@@ -1,5 +1,13 @@
 {
     "appName": "Landmarks",
     "homeTitle": "Landmarks",
-    "homeFavoritesOnly": "Favorites Only"
+    "homeFavoritesOnly": "Favorites Only",
+    "about": "About {name}",
+    "@about": {
+        "placeholders": {
+            "name": {
+                "type": "String"
+            }
+        }
+    }
 }
