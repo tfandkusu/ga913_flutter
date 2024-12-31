@@ -27,8 +27,8 @@ class HomeUiModelNotifier extends _$HomeUiModelNotifier implements HasEffect {
     state = state.copyWith(landmarks: landmarks);
   }
 
-  void navigateToDetail(Landmark? landmark) {
-    state = state.copyWith(navigateToDetail: landmark);
+  void navigateToDetail(int landmarkId) {
+    state = state.copyWith(navigateToDetail: landmarkId);
   }
 
   @override

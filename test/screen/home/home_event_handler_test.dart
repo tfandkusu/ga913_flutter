@@ -49,7 +49,7 @@ void main() {
     test('onLandmarkClickedでnavigateToDetailが更新される', () {
       final landmark = LandmarkMockData.landmarks[0];
       eventHandler.onLandmarkClicked(landmark);
-      verify(mockHomeUiModelNotifier.navigateToDetail(landmark)).called(1);
+      verify(mockHomeUiModelNotifier.navigateToDetail(landmark.id)).called(1);
     });
   });
 }

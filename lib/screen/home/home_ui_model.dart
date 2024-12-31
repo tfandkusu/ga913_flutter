@@ -9,6 +9,6 @@ class HomeUiModel with _$HomeUiModel {
     required bool progress,
     required bool favoritesOnly,
     required List<Landmark> landmarks,
-    required Landmark? navigateToDetail,
+    required int? navigateToDetail,
   }) = _HomeUiModel;
 }

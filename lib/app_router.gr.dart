@@ -13,13 +13,13 @@ part of 'app_router.dart';
 /// [DetailScreen]
 class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
   DetailRoute({
-    required Landmark landmark,
+    required int landmarkId,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           DetailRoute.name,
           args: DetailRouteArgs(
-            landmark: landmark,
+            landmarkId: landmarkId,
             key: key,
           ),
           initialChildren: children,
@@ -32,7 +32,7 @@ class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
     builder: (data) {
       final args = data.argsAs<DetailRouteArgs>();
       return DetailScreen(
-        args.landmark,
+        args.landmarkId,
         key: args.key,
       );
     },
@@ -41,17 +41,17 @@ class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
 
 class DetailRouteArgs {
   const DetailRouteArgs({
-    required this.landmark,
+    required this.landmarkId,
     this.key,
   });
 
-  final Landmark landmark;
+  final int landmarkId;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'DetailRouteArgs{landmark: $landmark, key: $key}';
+    return 'DetailRouteArgs{landmarkId: $landmarkId, key: $key}';
   }
 }
 

@@ -23,7 +23,7 @@ class HomeEventHandler implements HasEffect {
   }
 
   void onLandmarkClicked(Landmark landmark) {
-    _homeUiModelNotifier.navigateToDetail(landmark);
+    _homeUiModelNotifier.navigateToDetail(landmark.id);
   }
 
   @override

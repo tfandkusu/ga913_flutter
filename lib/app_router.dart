@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ga913_flutter/screen/home/home_screen.dart';
 import 'package:ga913_flutter/screen/detail/detail_screen.dart';
-import 'package:ga913_flutter/model/landmark.dart';
 
 // 画面クラスのインポートが必須
 
