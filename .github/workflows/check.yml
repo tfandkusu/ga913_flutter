@@ -21,8 +21,4 @@ jobs:
           flutter-version: '3.27.1'
           channel: 'stable'
           cache: true
-      - run: flutter pub get
-      - run: dart format --set-exit-if-changed .
-      - run: flutter analyze
-      - run: dart run custom_lint
-      - run: flutter test
+      - run: make check

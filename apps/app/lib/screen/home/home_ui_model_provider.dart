@@ -1,6 +1,6 @@
 import 'package:data/data.dart';
-import 'package:ga913_flutter/screen/home/home_ui_model.dart';
-import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
+import 'home_ui_model.dart';
+import 'home_ui_model_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

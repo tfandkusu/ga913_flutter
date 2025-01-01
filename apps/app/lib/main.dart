@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ga913_flutter/app_router.dart';
-import 'package:ga913_flutter/gen/l10n/l10n.dart';
+import 'app_router.dart';
+import 'gen/l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
