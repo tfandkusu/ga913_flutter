@@ -1,4 +1,4 @@
-import 'package:ga913_flutter/model/landmark.dart';
+import 'package:data/data.dart';
 
 class LandmarkMockData {
   static final List<Landmark> landmarks = [

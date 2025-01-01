@@ -1,12 +1,10 @@
 import 'dart:convert';
 
+import 'package:data/data.dart';
+import 'package:data/src/schema/landmark_json_schema.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import '../../model/landmark.dart';
-import '../schema/landmark_json_schema.dart';
-import 'landmark_list_notifier.dart';
 
 part 'landmark_repository.g.dart';
 

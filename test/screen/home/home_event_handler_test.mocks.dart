@@ -3,12 +3,9 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i8;
+import 'dart:async' as _i6;
 
-import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart'
-    as _i4;
-import 'package:ga913_flutter/data/repository/landmark_repository.dart' as _i7;
-import 'package:ga913_flutter/model/landmark.dart' as _i6;
+import 'package:data/data.dart' as _i4;
 import 'package:ga913_flutter/screen/home/home_ui_model.dart' as _i3;
 import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
@@ -130,7 +127,7 @@ class MockHomeUiModelNotifier extends _i1.Mock
       );
 
   @override
-  void setLandmarks(List<_i6.Landmark>? landmarks) => super.noSuchMethod(
+  void setLandmarks(List<_i4.Landmark>? landmarks) => super.noSuchMethod(
         Invocation.method(
           #setLandmarks,
           [landmarks],
@@ -197,7 +194,7 @@ class MockHomeUiModelNotifier extends _i1.Mock
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockLandmarkRepository extends _i1.Mock
-    implements _i7.LandmarkRepository {
+    implements _i4.LandmarkRepository {
   MockLandmarkRepository() {
     _i1.throwOnMissingStub(this);
   }
@@ -212,12 +209,12 @@ class MockLandmarkRepository extends _i1.Mock
       ) as _i4.LandmarkListNotifier);
 
   @override
-  _i8.Future<void> fetchLandmarks() => (super.noSuchMethod(
+  _i6.Future<void> fetchLandmarks() => (super.noSuchMethod(
         Invocation.method(
           #fetchLandmarks,
           [],
         ),
-        returnValue: _i8.Future<void>.value(),
-        returnValueForMissingStub: _i8.Future<void>.value(),
-      ) as _i8.Future<void>);
+        returnValue: _i6.Future<void>.value(),
+        returnValueForMissingStub: _i6.Future<void>.value(),
+      ) as _i6.Future<void>);
 }

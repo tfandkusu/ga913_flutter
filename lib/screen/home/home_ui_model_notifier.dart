@@ -1,4 +1,4 @@
-import 'package:ga913_flutter/model/landmark.dart';
+import 'package:data/data.dart';
 import 'package:ga913_flutter/screen/common/has_effect.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

@@ -3,9 +3,7 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart'
-    as _i3;
-import 'package:ga913_flutter/model/landmark.dart' as _i4;
+import 'package:data/data.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:riverpod_annotation/riverpod_annotation.dart' as _i2;
 
@@ -43,23 +41,23 @@ class MockLandmarkListNotifier extends _i1.Mock
   }
 
   @override
-  _i2.AutoDisposeNotifierProviderRef<List<_i4.Landmark>> get ref =>
+  _i2.AutoDisposeNotifierProviderRef<List<_i3.Landmark>> get ref =>
       (super.noSuchMethod(
         Invocation.getter(#ref),
-        returnValue: _FakeAutoDisposeNotifierProviderRef_0<List<_i4.Landmark>>(
+        returnValue: _FakeAutoDisposeNotifierProviderRef_0<List<_i3.Landmark>>(
           this,
           Invocation.getter(#ref),
         ),
-      ) as _i2.AutoDisposeNotifierProviderRef<List<_i4.Landmark>>);
+      ) as _i2.AutoDisposeNotifierProviderRef<List<_i3.Landmark>>);
 
   @override
-  List<_i4.Landmark> get state => (super.noSuchMethod(
+  List<_i3.Landmark> get state => (super.noSuchMethod(
         Invocation.getter(#state),
-        returnValue: <_i4.Landmark>[],
-      ) as List<_i4.Landmark>);
+        returnValue: <_i3.Landmark>[],
+      ) as List<_i3.Landmark>);
 
   @override
-  set state(List<_i4.Landmark>? value) => super.noSuchMethod(
+  set state(List<_i3.Landmark>? value) => super.noSuchMethod(
         Invocation.setter(
           #state,
           value,
@@ -68,16 +66,16 @@ class MockLandmarkListNotifier extends _i1.Mock
       );
 
   @override
-  List<_i4.Landmark> build() => (super.noSuchMethod(
+  List<_i3.Landmark> build() => (super.noSuchMethod(
         Invocation.method(
           #build,
           [],
         ),
-        returnValue: <_i4.Landmark>[],
-      ) as List<_i4.Landmark>);
+        returnValue: <_i3.Landmark>[],
+      ) as List<_i3.Landmark>);
 
   @override
-  void setLandmarkList(List<_i4.Landmark>? landmarkList) => super.noSuchMethod(
+  void setLandmarkList(List<_i3.Landmark>? landmarkList) => super.noSuchMethod(
         Invocation.method(
           #setLandmarkList,
           [landmarkList],
@@ -104,8 +102,8 @@ class MockLandmarkListNotifier extends _i1.Mock
   @override
   void listenSelf(
     void Function(
-      List<_i4.Landmark>?,
-      List<_i4.Landmark>,
+      List<_i3.Landmark>?,
+      List<_i3.Landmark>,
     )? listener, {
     void Function(
       Object,
@@ -123,8 +121,8 @@ class MockLandmarkListNotifier extends _i1.Mock
 
   @override
   bool updateShouldNotify(
-    List<_i4.Landmark>? previous,
-    List<_i4.Landmark>? next,
+    List<_i3.Landmark>? previous,
+    List<_i3.Landmark>? next,
   ) =>
       (super.noSuchMethod(
         Invocation.method(

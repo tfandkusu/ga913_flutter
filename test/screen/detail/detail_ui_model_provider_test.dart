@@ -1,10 +1,10 @@
+import 'package:data/data.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart';
 import 'package:ga913_flutter/screen/detail/detail_ui_model.dart';
 import 'package:ga913_flutter/screen/detail/detail_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../data/mock/landmark_mock_data.dart';
+import '../../../packages/data/test/data/mock/landmark_mock_data.dart';
 
 void main() {
   group('DetailUiModelProvider', () {
