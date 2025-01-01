@@ -5,7 +5,6 @@ import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../../packages/data/test/data/mock/landmark_mock_data.dart';
 import 'home_event_handler_test.mocks.dart';
 
 @GenerateMocks([HomeUiModelNotifier, LandmarkRepository])

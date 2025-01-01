@@ -4,8 +4,6 @@ import 'package:ga913_flutter/screen/home/home_ui_model_provider.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../packages/data/test/data/mock/landmark_mock_data.dart';
-
 void main() {
   group('HomeUiModelProvider', () {
     late ProviderContainer container;
