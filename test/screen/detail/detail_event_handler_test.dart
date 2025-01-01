@@ -1,5 +1,5 @@
+import 'package:data/data.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart';
 import 'package:ga913_flutter/screen/detail/detail_event_handler.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

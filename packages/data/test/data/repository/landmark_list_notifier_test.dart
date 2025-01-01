@@ -1,8 +1,6 @@
+import 'package:data/data.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ga913_flutter/data/repository/landmark_list_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../mock/landmark_mock_data.dart';
 
 void main() {
   group('LandmarkListNotifier', () {

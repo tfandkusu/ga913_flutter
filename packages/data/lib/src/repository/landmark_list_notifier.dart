@@ -1,5 +1,5 @@
 // StateNotifierクラス
-import 'package:ga913_flutter/model/landmark.dart';
+import 'package:data/data.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'landmark_list_notifier.g.dart';

@@ -1,11 +1,10 @@
+import 'package:data/data.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ga913_flutter/data/repository/landmark_repository.dart';
 import 'package:ga913_flutter/screen/home/home_event_handler.dart';
 import 'package:ga913_flutter/screen/home/home_ui_model_notifier.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../data/mock/landmark_mock_data.dart';
 import 'home_event_handler_test.mocks.dart';
 
 @GenerateMocks([HomeUiModelNotifier, LandmarkRepository])
