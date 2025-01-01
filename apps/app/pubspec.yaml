@@ -19,7 +19,7 @@ dependencies:
   intl: ^0.19.0
   auto_route: ^9.2.2
   data:
-    path: packages/data
+    path: ../../packages/data
 
 dev_dependencies:
   flutter_test:

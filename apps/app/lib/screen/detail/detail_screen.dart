@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:ga913_flutter/gen/l10n/l10n.dart';
-import 'package:ga913_flutter/screen/detail/detail_event_handler.dart';
-import 'package:ga913_flutter/screen/detail/detail_ui_model_provider.dart';
+import '../../gen/l10n/l10n.dart';
+import 'detail_event_handler.dart';
+import 'detail_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @RoutePage()

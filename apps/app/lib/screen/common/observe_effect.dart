@@ -1,4 +1,4 @@
-import 'package:ga913_flutter/screen/common/has_effect.dart';
+import 'has_effect.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 /// 画面遷移などの単発イベントを処理する

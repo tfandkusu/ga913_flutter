@@ -19,8 +19,8 @@ class LandmarkRepository {
   LandmarkRepository({required this.landmarkListNotifier});
 
   Future<void> fetchLandmarks() async {
-    final jsonString =
-        await rootBundle.loadString('assets/data/landmarkData.json');
+    final jsonString = await rootBundle
+        .loadString('packages/data/assets/data/landmarkData.json');
     List<dynamic> jsonListMap = json.decode(jsonString);
     final landmarks = jsonListMap
         .map((jsonMap) => LandmarkJsonSchema.fromJson(jsonMap))
@@ -31,7 +31,7 @@ class LandmarkRepository {
               isFavorite: jsonSchema.isFavorite,
               park: jsonSchema.park,
               description: jsonSchema.description,
-              imageUrl: "assets/data/${jsonSchema.imageName}.jpg",
+              imageUrl: "packages/data/assets/data/${jsonSchema.imageName}.jpg",
             ))
         .toList();
 

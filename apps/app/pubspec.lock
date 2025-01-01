@@ -257,7 +257,7 @@ packages:
   data:
     dependency: "direct main"
     description:
-      path: "packages/data"
+      path: "../../packages/data"
       relative: true
     source: path
     version: "0.0.1"
