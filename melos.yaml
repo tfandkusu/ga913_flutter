@@ -1,0 +1,22 @@
+name: ga913_flutter
+
+packages:
+  - apps/**
+  - packages/**
+
+scripts:
+  format:
+    exec: dart format --set-exit-if-changed .
+  custom_lint:
+    exec: dart run custom_lint
+  analyze:
+    run: flutter analyze
+    exec:
+      concurrency: 1
+  test:
+    run: flutter test
+    exec:
+      concurrency: 1
+ide:
+  intellij:
+    enabled: false
