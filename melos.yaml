@@ -17,6 +17,10 @@ scripts:
     run: flutter test
     exec:
       concurrency: 1
+  codegen:
+    exec: dart run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
 ide:
   intellij:
     enabled: false
