@@ -23,9 +23,7 @@ jobs:
           cache: true
       - run: dart pub global activate melos
       - run: melos bootstrap
-      - name: Run Checks
-        run: |
-          melos run format
-          melos run custom_lint
-          melos run analyze
-          melos run test
+      - run: melos run format
+      - run: melos run custom_lint
+      - run: melos run analyze
+      - run: melos run test
