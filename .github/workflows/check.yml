@@ -21,4 +21,9 @@ jobs:
           flutter-version: '3.27.1'
           channel: 'stable'
           cache: true
-# TODO CI 復活
+      - run: dart pub global activate melos
+      - run: melos bootstrap
+      - run: melos run format
+      - run: melos run custom_lint
+      - run: melos run analyze
+      - run: melos run test
