@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../gen/l10n/l10n.dart';
 import 'detail_event_handler.dart';
 import 'detail_ui_model_provider.dart';
@@ -10,12 +11,24 @@ class DetailScreen extends HookConsumerWidget {
   final int _landmarkId;
   const DetailScreen(this._landmarkId, {super.key});
 
+  static const platform = MethodChannel('com.tfandkusu.ga913flutter');
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final uiModel = ref.watch(detailUiModelProvider(_landmarkId));
     final eventHandler = ref.read(detailEventHandlerProvider(_landmarkId));
     final landmark = uiModel.landmark;
-    return Scaffold(
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) {
+          return;
+        }
+        platform.invokeMethod('close');
+        context.router.popForced();
+      },
+      child: Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text(landmark.name),
@@ -37,7 +50,9 @@ class DetailScreen extends HookConsumerWidget {
             _about(context, landmark.name),
             _description(context, landmark.description),
           ],
-        ));
+        ),
+      ),
+    );
   }
 
   Widget _image(BuildContext context, String imageUrl) {

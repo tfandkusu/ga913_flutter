@@ -40,7 +40,7 @@ class HomeScreen extends HookConsumerWidget {
           'id': uiModel.navigateToDetail!,
         };
         platform.invokeMethod('navigateToDetail', params);
-        // context.router.push(DetailRoute(landmarkId: uiModel.navigateToDetail!));
+        //context.router.push(DetailRoute(landmarkId: uiModel.navigateToDetail!));
         return true;
       }
       return false;
