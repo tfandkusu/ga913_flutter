@@ -35,4 +35,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
+  module:
+    androidX: true
+    androidPackage: com.tfandkusu.ga913flutter
+    iosBundleIdentifier: com.tfandkusu.ga913flutter
