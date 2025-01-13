@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:data/data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import '../../app_router.dart';
+import 'package:ga913_flutter/app_router.dart';
 import '../../gen/l10n/l10n.dart';
 import '../common/observe_effect.dart';
 import 'home_event_handler.dart';
@@ -14,18 +15,32 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
 
+  static const platform = MethodChannel('com.tfandkusu.ga913flutter');
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l = L10n.of(context);
     final uiModel = ref.watch(homeUiModelProvider);
     final eventHandler = ref.read(homeEventHandlerProvider);
     useEffect(() {
+      platform.setMethodCallHandler(
+        (call) {
+          if (call.method == 'navigateToDetail') {
+            final id = call.arguments['id'];
+            context.router.push(DetailRoute(landmarkId: id));
+          }
+          return Future.value(null);
+        },
+      );
       eventHandler.onCreate();
       return null;
     }, []);
     observeEffect(ref, homeUiModelNotifierProvider, eventHandler, (uiModel) {
       if (uiModel.navigateToDetail != null) {
-        context.router.push(DetailRoute(landmarkId: uiModel.navigateToDetail!));
+        final Map params = <String, dynamic>{
+          'id': uiModel.navigateToDetail!,
+        };
+        platform.invokeMethod('navigateToDetail', params);
+        // context.router.push(DetailRoute(landmarkId: uiModel.navigateToDetail!));
         return true;
       }
       return false;
