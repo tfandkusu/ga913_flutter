@@ -20,6 +20,7 @@ dependencies:
   auto_route: ^9.2.2
   data:
     path: ../../packages/data
+  firebase_core: ^3.10.1
 
 dev_dependencies:
   flutter_test:
