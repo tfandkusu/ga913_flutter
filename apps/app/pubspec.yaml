@@ -21,6 +21,7 @@ dependencies:
   data:
     path: ../../packages/data
   firebase_core: ^3.10.1
+  firebase_analytics: ^11.4.1
 
 dev_dependencies:
   flutter_test:
