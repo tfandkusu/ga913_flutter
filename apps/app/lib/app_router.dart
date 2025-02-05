@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ga913_flutter/screen/camera/camera_screen.dart';
 import 'screen/home/home_screen.dart';
 import 'screen/detail/detail_screen.dart';
 
@@ -13,6 +14,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: HomeRoute.page, initial: true),
         AutoRoute(page: DetailRoute.page),
+        AutoRoute(page: PreCameraRoute.page),
       ];
 
   @override

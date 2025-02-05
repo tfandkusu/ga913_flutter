@@ -73,3 +73,22 @@ class HomeRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [PreCameraScreen]
+class PreCameraRoute extends PageRouteInfo<void> {
+  const PreCameraRoute({List<PageRouteInfo>? children})
+      : super(
+          PreCameraRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PreCameraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const PreCameraScreen();
+    },
+  );
+}
