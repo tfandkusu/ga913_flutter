@@ -32,6 +32,7 @@ class PreCameraScreen extends HookConsumerWidget {
         if (context.mounted) {
           await _showAlertDialog(context,
               message: "onPermanentlyDeniedCallback");
+          await openAppSettings();
           if (context.mounted) {
             context.maybePop();
           }
