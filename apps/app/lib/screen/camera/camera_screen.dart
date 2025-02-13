@@ -13,8 +13,22 @@ class CameraScreen extends HookConsumerWidget {
       return null;
     }, []);
 
-    return Container(
-      color: Colors.black,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            context.router.maybePop();
+          },
+        ),
+      ),
+      body: Container(),
     );
   }
 }
