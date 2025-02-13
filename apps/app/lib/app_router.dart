@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ga913_flutter/screen/camera/camera_screen.dart';
+import 'package:ga913_flutter/screen/camera/pre_camera_screen.dart';
 import 'screen/home/home_screen.dart';
 import 'screen/detail/detail_screen.dart';
 
