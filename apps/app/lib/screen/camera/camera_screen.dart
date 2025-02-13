@@ -1,16 +1,38 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/screen/camera/camera_event_handler.dart';
+import 'package:ga913_flutter/screen/camera/camera_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @RoutePage()
+// ignore: must_be_immutable
 class CameraScreen extends HookConsumerWidget {
-  const CameraScreen({super.key});
+  CameraScreen({super.key});
+
+  late CameraController _controller;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final uiModel = ref.watch(cameraUiModelProvider);
+    final eventHandler = ref.read(cameraEventHandlerProvider);
+    final observer = _CameraScreenObserver(
+      onResume: (controller) {
+        _controller = controller;
+        eventHandler.onResume();
+      },
+      onPause: () {
+        eventHandler.onPause();
+      },
+    );
     useEffect(() {
-      return null;
+      observer.onCreate();
+      WidgetsBinding.instance.addObserver(observer);
+      return () {
+        WidgetsBinding.instance.removeObserver(observer);
+        observer.onDestroy();
+      };
     }, []);
 
     return Scaffold(
@@ -28,7 +50,63 @@ class CameraScreen extends HookConsumerWidget {
           },
         ),
       ),
-      body: Container(),
+      body: _buildCameraPreview(uiModel.cameraPreviewAttached),
     );
+  }
+
+  Widget _buildCameraPreview(bool cameraPreviewAttached) {
+    if (cameraPreviewAttached) {
+      return CameraPreview(_controller);
+    } else {
+      return Container();
+    }
+  }
+}
+
+class _CameraScreenObserver extends WidgetsBindingObserver {
+  late CameraController _controller;
+
+  final Function(CameraController) onResume;
+
+  final Function() onPause;
+
+  _CameraScreenObserver({required this.onResume, required this.onPause});
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _onResume();
+    } else if (state == AppLifecycleState.inactive) {
+      _onPause();
+    }
+  }
+
+  Future<void> onCreate() async {
+    await _setUpCamera();
+    onResume(_controller);
+  }
+
+  Future<void> _setUpCamera() async {
+    final cameras = await availableCameras();
+    final firstCamera = cameras.first;
+    _controller = CameraController(
+      firstCamera,
+      ResolutionPreset.high,
+    );
+    await _controller.initialize();
+  }
+
+  Future<void> _onResume() async {
+    await _setUpCamera();
+    onResume(_controller);
+  }
+
+  Future<void> _onPause() async {
+    await _controller.dispose();
+    onPause();
+  }
+
+  Future<void> onDestroy() async {
+    await _controller.dispose();
   }
 }

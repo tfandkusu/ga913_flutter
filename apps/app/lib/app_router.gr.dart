@@ -11,10 +11,13 @@ part of 'app_router.dart';
 
 /// generated route for
 /// [CameraScreen]
-class CameraRoute extends PageRouteInfo<void> {
-  const CameraRoute({List<PageRouteInfo>? children})
-      : super(
+class CameraRoute extends PageRouteInfo<CameraRouteArgs> {
+  CameraRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           CameraRoute.name,
+          args: CameraRouteArgs(key: key),
           initialChildren: children,
         );
 
@@ -23,9 +26,22 @@ class CameraRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const CameraScreen();
+      final args =
+          data.argsAs<CameraRouteArgs>(orElse: () => const CameraRouteArgs());
+      return CameraScreen(key: args.key);
     },
   );
+}
+
+class CameraRouteArgs {
+  const CameraRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CameraRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for

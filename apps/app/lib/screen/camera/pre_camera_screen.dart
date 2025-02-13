@@ -23,7 +23,7 @@ class PreCameraScreen extends HookConsumerWidget {
           }
         }
       }).onGrantedCallback(() async {
-        await context.router.push(const CameraRoute());
+        await context.router.push(CameraRoute());
         if (context.mounted) {
           context.maybePop();
         }
