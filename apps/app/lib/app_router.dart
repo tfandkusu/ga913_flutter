@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
-import 'package:ga913_flutter/screen/camera/pre_camera_screen.dart';
 import 'screen/home/home_screen.dart';
 import 'screen/detail/detail_screen.dart';
+import 'screen/camera/pre_camera_screen.dart';
+import 'screen/camera/camera_screen.dart';
 
 // 画面クラスのインポートが必須
 
@@ -15,6 +16,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: HomeRoute.page, initial: true),
         AutoRoute(page: DetailRoute.page),
         AutoRoute(page: PreCameraRoute.page),
+        AutoRoute(page: CameraRoute.page),
       ];
 
   @override

@@ -10,6 +10,25 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [CameraScreen]
+class CameraRoute extends PageRouteInfo<void> {
+  const CameraRoute({List<PageRouteInfo>? children})
+      : super(
+          CameraRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CameraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const CameraScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [DetailScreen]
 class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
   DetailRoute({
