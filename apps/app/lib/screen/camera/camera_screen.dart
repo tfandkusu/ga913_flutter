@@ -91,6 +91,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
     _controller = CameraController(
       firstCamera,
       ResolutionPreset.high,
+      enableAudio: false,
     );
     await _controller.initialize();
   }
