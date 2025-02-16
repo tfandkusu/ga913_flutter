@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:ga913_flutter/screen/camera/camera_event_handler.dart';
 import 'package:ga913_flutter/screen/camera/camera_ui_model_provider.dart';
@@ -56,7 +57,7 @@ class CameraScreen extends HookConsumerWidget {
 
   Widget _buildCameraPreview(bool cameraPreviewAttached) {
     if (cameraPreviewAttached) {
-      return CameraPreview(_controller);
+      return SizedBox.expand(child: CameraPreview(_controller));
     } else {
       return Container();
     }
@@ -94,6 +95,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
       enableAudio: false,
     );
     await _controller.initialize();
+    _controller.lockCaptureOrientation(DeviceOrientation.landscapeRight);
   }
 
   Future<void> _onResume() async {
