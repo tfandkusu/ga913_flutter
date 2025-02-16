@@ -82,8 +82,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> onCreate() async {
-    await _setUpCamera();
-    onResume(_controller);
+    _onResume();
   }
 
   Future<void> _setUpCamera() async {
@@ -107,6 +106,6 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> onDestroy() async {
-    await _controller.dispose();
+    _onPause();
   }
 }

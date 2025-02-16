@@ -1,4 +1,6 @@
 PODS:
+  - camera_avfoundation (0.0.1):
+    - Flutter
   - Firebase/Analytics (11.6.0):
     - Firebase/Core
   - Firebase/Core (11.6.0):
@@ -133,6 +135,7 @@ PODS:
     - PromisesObjC (= 2.4.0)
 
 DEPENDENCIES:
+  - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
@@ -158,6 +161,8 @@ SPEC REPOS:
     - PromisesSwift
 
 EXTERNAL SOURCES:
+  camera_avfoundation:
+    :path: ".symlinks/plugins/camera_avfoundation/ios"
   firebase_analytics:
     :path: ".symlinks/plugins/firebase_analytics/ios"
   firebase_core:
@@ -170,6 +175,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/permission_handler_apple/ios"
 
 SPEC CHECKSUMS:
+  camera_avfoundation: 04b44aeb14070126c6529e5ab82cc7c9fca107cf
   Firebase: 374a441a91ead896215703a674d58cdb3e9d772b
   firebase_analytics: 8ad276088e4f9ba7dfc8dd6be4ee93a29673dde1
   firebase_core: d3deb82d05dac4bc13190f9d1770787fd6a1cda4
