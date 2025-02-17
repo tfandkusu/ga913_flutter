@@ -30,9 +30,7 @@ class CameraScreen extends HookConsumerWidget {
         ));
     useEffect(() {
       observer.onCreate();
-      WidgetsBinding.instance.addObserver(observer);
       return () {
-        WidgetsBinding.instance.removeObserver(observer);
         observer.onDestroy();
       };
     }, []);
@@ -117,6 +115,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> onCreate() async {
+    WidgetsBinding.instance.addObserver(this);
     await _onResume();
   }
 
@@ -143,6 +142,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> onDestroy() async {
+    WidgetsBinding.instance.removeObserver(this);
     await _onPause();
   }
 }
