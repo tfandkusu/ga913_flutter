@@ -95,7 +95,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
       enableAudio: false,
     );
     await _controller.initialize();
-    _controller.lockCaptureOrientation(DeviceOrientation.landscapeRight);
+    await _controller.lockCaptureOrientation(DeviceOrientation.landscapeRight);
   }
 
   Future<void> _onResume() async {
