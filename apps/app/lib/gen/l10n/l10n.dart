@@ -116,6 +116,12 @@ abstract class L10n {
   /// In en, this message translates to:
   /// **'About {name}'**
   String about(String name);
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {
