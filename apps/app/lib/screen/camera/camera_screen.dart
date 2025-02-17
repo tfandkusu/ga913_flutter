@@ -63,9 +63,13 @@ class CameraScreen extends HookConsumerWidget {
               child: GestureDetector(
                 onTap: () async {
                   // シャッターボタンのタップ処理
-                  observer.onDestroy();
-                  await context.router.push(const NextCameraRoute());
-                  observer.onCreate();
+                  final image = await _controller.takePicture();
+                  await observer.onDestroy();
+                  if (context.mounted) {
+                    await context.router
+                        .push(PostCameraRoute(imagePath: image.path));
+                  }
+                  await observer.onCreate();
                 },
                 child: Container(
                   width: 70, // ボタンの大きさ

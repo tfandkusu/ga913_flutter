@@ -110,22 +110,49 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [NextCameraScreen]
-class NextCameraRoute extends PageRouteInfo<void> {
-  const NextCameraRoute({List<PageRouteInfo>? children})
-      : super(
-          NextCameraRoute.name,
+/// [PostCameraScreen]
+class PostCameraRoute extends PageRouteInfo<PostCameraRouteArgs> {
+  PostCameraRoute({
+    Key? key,
+    required String imagePath,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PostCameraRoute.name,
+          args: PostCameraRouteArgs(
+            key: key,
+            imagePath: imagePath,
+          ),
           initialChildren: children,
         );
 
-  static const String name = 'NextCameraRoute';
+  static const String name = 'PostCameraRoute';
 
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const NextCameraScreen();
+      final args = data.argsAs<PostCameraRouteArgs>();
+      return PostCameraScreen(
+        key: args.key,
+        imagePath: args.imagePath,
+      );
     },
   );
+}
+
+class PostCameraRouteArgs {
+  const PostCameraRouteArgs({
+    this.key,
+    required this.imagePath,
+  });
+
+  final Key? key;
+
+  final String imagePath;
+
+  @override
+  String toString() {
+    return 'PostCameraRouteArgs{key: $key, imagePath: $imagePath}';
+  }
 }
 
 /// generated route for
