@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +33,7 @@ class CameraScreen extends HookConsumerWidget {
     useEffect(() {
       observer.onCreate();
       return () {
-        observer.onDestroy();
+        observer.onDestroy(dispose: true);
       };
     }, []);
 
@@ -64,7 +66,7 @@ class CameraScreen extends HookConsumerWidget {
                 onTap: () async {
                   // シャッターボタンのタップ処理
                   final image = await _controller.takePicture();
-                  await observer.onDestroy();
+                  await observer.onDestroy(dispose: false);
                   if (context.mounted) {
                     await context.router
                         .push(PostCameraRoute(imagePath: image.path));
@@ -132,7 +134,10 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
       enableAudio: false,
     );
     await _controller.initialize();
-    await _controller.lockCaptureOrientation(DeviceOrientation.landscapeRight);
+    if (Platform.isAndroid) {
+      await _controller
+          .lockCaptureOrientation(DeviceOrientation.landscapeRight);
+    }
   }
 
   Future<void> _onResume() async {
@@ -141,12 +146,16 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> _onPause() async {
-    await _controller.dispose();
     onPause();
+    await _controller.dispose();
   }
 
-  Future<void> onDestroy() async {
+  Future<void> onDestroy({required bool dispose}) async {
     WidgetsBinding.instance.removeObserver(this);
-    await _onPause();
+    if (dispose) {
+      await _controller.dispose();
+    } else {
+      await _onPause();
+    }
   }
 }
