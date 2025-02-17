@@ -3,6 +3,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:ga913_flutter/app_router.dart';
 import 'package:ga913_flutter/screen/camera/camera_event_handler.dart';
 import 'package:ga913_flutter/screen/camera/camera_ui_model_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -18,15 +19,15 @@ class CameraScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final uiModel = ref.watch(cameraUiModelProvider);
     final eventHandler = ref.read(cameraEventHandlerProvider);
-    final observer = _CameraScreenObserver(
-      onResume: (controller) {
-        _controller = controller;
-        eventHandler.onResume();
-      },
-      onPause: () {
-        eventHandler.onPause();
-      },
-    );
+    final observer = useMemoized(() => _CameraScreenObserver(
+          onResume: (controller) {
+            _controller = controller;
+            eventHandler.onResume();
+          },
+          onPause: () {
+            eventHandler.onPause();
+          },
+        ));
     useEffect(() {
       observer.onCreate();
       WidgetsBinding.instance.addObserver(observer);
@@ -51,7 +52,40 @@ class CameraScreen extends HookConsumerWidget {
           },
         ),
       ),
-      body: _buildCameraPreview(uiModel.cameraPreviewAttached),
+      body: Stack(
+        children: [
+          SizedBox.expand(
+            child: _buildCameraPreview(uiModel.cameraPreviewAttached),
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: MediaQuery.of(context).padding.bottom + 32, // 下端からの距離
+            child: Center(
+              child: GestureDetector(
+                onTap: () async {
+                  // シャッターボタンのタップ処理
+                  observer.onDestroy();
+                  await context.router.push(const NextCameraRoute());
+                  observer.onCreate();
+                },
+                child: Container(
+                  width: 70, // ボタンの大きさ
+                  height: 70,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 5,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -83,7 +117,7 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> onCreate() async {
-    _onResume();
+    await _onResume();
   }
 
   Future<void> _setUpCamera() async {
@@ -109,6 +143,6 @@ class _CameraScreenObserver extends WidgetsBindingObserver {
   }
 
   Future<void> onDestroy() async {
-    _onPause();
+    await _onPause();
   }
 }

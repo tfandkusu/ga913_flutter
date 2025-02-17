@@ -110,6 +110,25 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [NextCameraScreen]
+class NextCameraRoute extends PageRouteInfo<void> {
+  const NextCameraRoute({List<PageRouteInfo>? children})
+      : super(
+          NextCameraRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NextCameraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const NextCameraScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [PreCameraScreen]
 class PreCameraRoute extends PageRouteInfo<void> {
   const PreCameraRoute({List<PageRouteInfo>? children})
