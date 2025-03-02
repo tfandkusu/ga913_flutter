@@ -1,9 +1,11 @@
-import 'package:animations/animations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:ga913_flutter/my_router_observer.dart';
 import 'app_router.dart';
 import 'gen/l10n/l10n.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -12,7 +14,7 @@ import 'firebase_options.dart';
 
 void main() async {
   // アニメーションを遅くするときは、こちらを設定する
-  // timeDilation = 5;
+  timeDilation = 5;
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   await Firebase.initializeApp(
@@ -41,9 +43,9 @@ class MyApp extends StatelessWidget {
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: <TargetPlatform, PageTransitionsBuilder>{
             // Material 3 の　　Forward and backward　でアニメーション行う
-            TargetPlatform.android: SharedAxisPageTransitionsBuilder(
-              transitionType: SharedAxisTransitionType.horizontal,
-            ),
+            // TargetPlatform.android: SharedAxisPageTransitionsBuilder(
+            //   transitionType: SharedAxisTransitionType.horizontal,
+            // ),
           },
         ),
       ),
@@ -54,7 +56,9 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: L10n.supportedLocales,
-      routerConfig: _appRouter.config(),
+      routerConfig: _appRouter.config(
+        navigatorObservers: () => [MyNavigatorObserver()],
+      ),
     );
   }
 }
