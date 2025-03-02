@@ -1,7 +1,7 @@
-import 'package:animations/animations.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'app_router.dart';
@@ -12,7 +12,7 @@ import 'firebase_options.dart';
 
 void main() async {
   // アニメーションを遅くするときは、こちらを設定する
-  // timeDilation = 5;
+  timeDilation = 5;
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   await Firebase.initializeApp(
@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: <TargetPlatform, PageTransitionsBuilder>{
             // Material 3 の　　Forward and backward　でアニメーション行う
-            TargetPlatform.android: SharedAxisPageTransitionsBuilder(
-              transitionType: SharedAxisTransitionType.horizontal,
-            ),
+            // TargetPlatform.android: SharedAxisPageTransitionsBuilder(
+            //   transitionType: SharedAxisTransitionType.horizontal,
+            // ),
           },
         ),
       ),
