@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:data/data.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -83,13 +82,7 @@ class HomeScreen extends HookConsumerWidget {
       BuildContext context, HomeEventHandler eventHandler, Landmark landmark) {
     return InkWell(
       onTap: () {
-        EasyDebounce.debounce(
-          'onLandmarkClicked',
-          const Duration(milliseconds: 500),
-          () {
-            eventHandler.onLandmarkClicked(landmark);
-          },
-        );
+        eventHandler.onLandmarkClicked(landmark);
       },
       child: Container(
         padding: const EdgeInsets.all(16),
