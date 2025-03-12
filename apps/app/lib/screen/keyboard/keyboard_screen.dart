@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -12,15 +14,16 @@ class KeyboardScreen extends HookConsumerWidget {
     final theme = Theme.of(context);
     final text = useState('');
     final textController = useTextEditingController(text: text.value);
-
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: theme.colorScheme.inversePrimary,
         title: const Text('Soft Keyboard'),
       ),
       body: Padding(
         padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewPadding.bottom,
+          bottom: max(MediaQuery.of(context).viewInsets.bottom,
+              MediaQuery.of(context).viewPadding.bottom),
         ),
         child: Column(
           children: [
