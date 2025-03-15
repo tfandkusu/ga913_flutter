@@ -48,6 +48,10 @@ class HomeScreen extends HookConsumerWidget {
               context.router.push(const PreCameraRoute());
             },
           ),
+          IconButton(
+            icon: const Icon(Icons.keyboard),
+            onPressed: () => context.router.push(const KeyboardRoute()),
+          ),
         ],
       ),
       body: uiModel.progress // ここで条件分岐

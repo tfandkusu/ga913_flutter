@@ -5,7 +5,7 @@ import 'screen/detail/detail_screen.dart';
 import 'screen/camera/pre_camera_screen.dart';
 import 'screen/camera/camera_screen.dart';
 import 'screen/camera/post_camera_screen.dart';
-
+import 'screen/keyboard/keyboard_screen.dart';
 // 画面クラスのインポートが必須
 
 part 'app_router.gr.dart';
@@ -19,6 +19,7 @@ class AppRouter extends RootStackRouter {
         AutoRoute(page: PreCameraRoute.page),
         AutoRoute(page: CameraRoute.page),
         AutoRoute(page: PostCameraRoute.page),
+        AutoRoute(page: KeyboardRoute.page),
       ];
 
   @override

@@ -110,6 +110,25 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [KeyboardScreen]
+class KeyboardRoute extends PageRouteInfo<void> {
+  const KeyboardRoute({List<PageRouteInfo>? children})
+      : super(
+          KeyboardRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'KeyboardRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const KeyboardScreen();
+    },
+  );
+}
+
+/// generated route for
 /// [PostCameraScreen]
 class PostCameraRoute extends PageRouteInfo<PostCameraRouteArgs> {
   PostCameraRoute({
