@@ -3,8 +3,9 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:data/data.dart' as _i2;
+import 'package:data/data.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:riverpod_annotation/riverpod_annotation.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -19,26 +20,62 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
+class _FakeAutoDisposeNotifierProviderRef_0<T> extends _i1.SmartFake
+    implements _i2.AutoDisposeNotifierProviderRef<T> {
+  _FakeAutoDisposeNotifierProviderRef_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [LandmarkListNotifier].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockLandmarkListNotifier extends _i1.Mock
-    implements _i2.LandmarkListNotifier {
+    implements _i3.LandmarkListNotifier {
   MockLandmarkListNotifier() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  List<_i2.Landmark> build() => (super.noSuchMethod(
+  _i2.AutoDisposeNotifierProviderRef<List<_i3.Landmark>> get ref =>
+      (super.noSuchMethod(
+        Invocation.getter(#ref),
+        returnValue: _FakeAutoDisposeNotifierProviderRef_0<List<_i3.Landmark>>(
+          this,
+          Invocation.getter(#ref),
+        ),
+      ) as _i2.AutoDisposeNotifierProviderRef<List<_i3.Landmark>>);
+
+  @override
+  List<_i3.Landmark> get state => (super.noSuchMethod(
+        Invocation.getter(#state),
+        returnValue: <_i3.Landmark>[],
+      ) as List<_i3.Landmark>);
+
+  @override
+  set state(List<_i3.Landmark>? value) => super.noSuchMethod(
+        Invocation.setter(
+          #state,
+          value,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  List<_i3.Landmark> build() => (super.noSuchMethod(
         Invocation.method(
           #build,
           [],
         ),
-        returnValue: <_i2.Landmark>[],
-      ) as List<_i2.Landmark>);
+        returnValue: <_i3.Landmark>[],
+      ) as List<_i3.Landmark>);
 
   @override
-  void setLandmarkList(List<_i2.Landmark>? landmarkList) => super.noSuchMethod(
+  void setLandmarkList(List<_i3.Landmark>? landmarkList) => super.noSuchMethod(
         Invocation.method(
           #setLandmarkList,
           [landmarkList],
@@ -61,4 +98,40 @@ class MockLandmarkListNotifier extends _i1.Mock
         ),
         returnValueForMissingStub: null,
       );
+
+  @override
+  void listenSelf(
+    void Function(
+      List<_i3.Landmark>?,
+      List<_i3.Landmark>,
+    )? listener, {
+    void Function(
+      Object,
+      StackTrace,
+    )? onError,
+  }) =>
+      super.noSuchMethod(
+        Invocation.method(
+          #listenSelf,
+          [listener],
+          {#onError: onError},
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  bool updateShouldNotify(
+    List<_i3.Landmark>? previous,
+    List<_i3.Landmark>? next,
+  ) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #updateShouldNotify,
+          [
+            previous,
+            next,
+          ],
+        ),
+        returnValue: false,
+      ) as bool);
 }

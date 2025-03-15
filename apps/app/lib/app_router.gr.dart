@@ -10,6 +10,41 @@
 part of 'app_router.dart';
 
 /// generated route for
+/// [CameraScreen]
+class CameraRoute extends PageRouteInfo<CameraRouteArgs> {
+  CameraRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CameraRoute.name,
+          args: CameraRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'CameraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args =
+          data.argsAs<CameraRouteArgs>(orElse: () => const CameraRouteArgs());
+      return CameraScreen(key: args.key);
+    },
+  );
+}
+
+class CameraRouteArgs {
+  const CameraRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CameraRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
 /// [DetailScreen]
 class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
   DetailRoute({
@@ -70,6 +105,90 @@ class HomeRoute extends PageRouteInfo<void> {
     name,
     builder: (data) {
       return const HomeScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [KeyboardScreen]
+class KeyboardRoute extends PageRouteInfo<void> {
+  const KeyboardRoute({List<PageRouteInfo>? children})
+      : super(
+          KeyboardRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'KeyboardRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const KeyboardScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [PostCameraScreen]
+class PostCameraRoute extends PageRouteInfo<PostCameraRouteArgs> {
+  PostCameraRoute({
+    Key? key,
+    required String imagePath,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PostCameraRoute.name,
+          args: PostCameraRouteArgs(
+            key: key,
+            imagePath: imagePath,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PostCameraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PostCameraRouteArgs>();
+      return PostCameraScreen(
+        key: args.key,
+        imagePath: args.imagePath,
+      );
+    },
+  );
+}
+
+class PostCameraRouteArgs {
+  const PostCameraRouteArgs({
+    this.key,
+    required this.imagePath,
+  });
+
+  final Key? key;
+
+  final String imagePath;
+
+  @override
+  String toString() {
+    return 'PostCameraRouteArgs{key: $key, imagePath: $imagePath}';
+  }
+}
+
+/// generated route for
+/// [PreCameraScreen]
+class PreCameraRoute extends PageRouteInfo<void> {
+  const PreCameraRoute({List<PageRouteInfo>? children})
+      : super(
+          PreCameraRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PreCameraRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const PreCameraScreen();
     },
   );
 }
