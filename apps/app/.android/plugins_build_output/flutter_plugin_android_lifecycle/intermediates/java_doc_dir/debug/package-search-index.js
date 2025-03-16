@@ -1,1 +1,0 @@
-var packageSearchIndex = [{"l":"io.flutter.plugins.flutter_plugin_android_lifecycle","url":"io/flutter/plugins/flutter_plugin_android_lifecycle/package-summary.html"}, {"l":"io.flutter.embedding.engine.plugins.lifecycle","url":"io/flutter/embedding/engine/plugins/lifecycle/package-summary.html"}, {"l":"All packages","url":"index.html"}]

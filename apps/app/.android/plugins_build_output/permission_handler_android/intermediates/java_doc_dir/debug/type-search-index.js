@@ -1,1 +1,0 @@
-var typeSearchIndex = [{"p":"com.baseflow.permissionhandler","l":"PermissionHandlerPlugin","url":"com/baseflow/permissionhandler/PermissionHandlerPlugin.html"}, {"p":"com.baseflow.permissionhandler","l":"PermissionUtils","url":"com/baseflow/permissionhandler/PermissionUtils.html"}, {"l":"All classes","url":"allclasses.html"}]

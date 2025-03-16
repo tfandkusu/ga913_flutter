@@ -8,3 +8,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+plugins_build_output
