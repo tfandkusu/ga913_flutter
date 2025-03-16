@@ -25,7 +25,8 @@ dependencies:
   firebase_crashlytics: ^4.3.1
   animations: ^2.0.11
   easy_debounce: ^2.0.3
-
+  permission_handler: ^11.3.1
+  camera: ^0.11.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -40,4 +41,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
+  module:
+    androidX: true
+    androidPackage: com.tfandkusu.ga913flutter
+    iosBundleIdentifier: com.tfandkusu.ga913flutter

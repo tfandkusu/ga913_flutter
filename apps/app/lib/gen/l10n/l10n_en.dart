@@ -19,4 +19,7 @@ class L10nEn extends L10n {
   String about(String name) {
     return 'About $name';
   }
+
+  @override
+  String get ok => 'OK';
 }
