@@ -40,6 +40,14 @@ class HomeScreen extends HookConsumerWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(l.homeTitle),
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.router.push(const WrapRoute());
+            },
+            icon: const Icon(Icons.square_rounded),
+          ),
+        ],
       ),
       body: uiModel.progress // ここで条件分岐
           ? const Center(
