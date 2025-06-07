@@ -18,10 +18,10 @@ class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
-         DetailRoute.name,
-         args: DetailRouteArgs(landmarkId: landmarkId, key: key),
-         initialChildren: children,
-       );
+          DetailRoute.name,
+          args: DetailRouteArgs(landmarkId: landmarkId, key: key),
+          initialChildren: children,
+        );
 
   static const String name = 'DetailRoute';
 
@@ -51,7 +51,7 @@ class DetailRouteArgs {
 /// [HomeScreen]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
-    : super(HomeRoute.name, initialChildren: children);
+      : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
