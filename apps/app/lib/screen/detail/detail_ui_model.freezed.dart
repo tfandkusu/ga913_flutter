@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,125 +10,26 @@ part of 'detail_ui_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$DetailUiModel {
-  Landmark get landmark => throw _privateConstructorUsedError;
+  Landmark get landmark;
 
   /// Create a copy of DetailUiModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $DetailUiModelCopyWith<DetailUiModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DetailUiModelCopyWith<$Res> {
-  factory $DetailUiModelCopyWith(
-          DetailUiModel value, $Res Function(DetailUiModel) then) =
-      _$DetailUiModelCopyWithImpl<$Res, DetailUiModel>;
-  @useResult
-  $Res call({Landmark landmark});
-
-  $LandmarkCopyWith<$Res> get landmark;
-}
-
-/// @nodoc
-class _$DetailUiModelCopyWithImpl<$Res, $Val extends DetailUiModel>
-    implements $DetailUiModelCopyWith<$Res> {
-  _$DetailUiModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of DetailUiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? landmark = null,
-  }) {
-    return _then(_value.copyWith(
-      landmark: null == landmark
-          ? _value.landmark
-          : landmark // ignore: cast_nullable_to_non_nullable
-              as Landmark,
-    ) as $Val);
-  }
-
-  /// Create a copy of DetailUiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $LandmarkCopyWith<$Res> get landmark {
-    return $LandmarkCopyWith<$Res>(_value.landmark, (value) {
-      return _then(_value.copyWith(landmark: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$DetailUiModelImplCopyWith<$Res>
-    implements $DetailUiModelCopyWith<$Res> {
-  factory _$$DetailUiModelImplCopyWith(
-          _$DetailUiModelImpl value, $Res Function(_$DetailUiModelImpl) then) =
-      __$$DetailUiModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({Landmark landmark});
-
-  @override
-  $LandmarkCopyWith<$Res> get landmark;
-}
-
-/// @nodoc
-class __$$DetailUiModelImplCopyWithImpl<$Res>
-    extends _$DetailUiModelCopyWithImpl<$Res, _$DetailUiModelImpl>
-    implements _$$DetailUiModelImplCopyWith<$Res> {
-  __$$DetailUiModelImplCopyWithImpl(
-      _$DetailUiModelImpl _value, $Res Function(_$DetailUiModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of DetailUiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? landmark = null,
-  }) {
-    return _then(_$DetailUiModelImpl(
-      landmark: null == landmark
-          ? _value.landmark
-          : landmark // ignore: cast_nullable_to_non_nullable
-              as Landmark,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$DetailUiModelImpl implements _DetailUiModel {
-  const _$DetailUiModelImpl({required this.landmark});
-
-  @override
-  final Landmark landmark;
-
-  @override
-  String toString() {
-    return 'DetailUiModel(landmark: $landmark)';
-  }
+      _$DetailUiModelCopyWithImpl<DetailUiModel>(
+          this as DetailUiModel, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DetailUiModelImpl &&
+            other is DetailUiModel &&
             (identical(other.landmark, landmark) ||
                 other.landmark == landmark));
   }
@@ -135,26 +37,137 @@ class _$DetailUiModelImpl implements _DetailUiModel {
   @override
   int get hashCode => Object.hash(runtimeType, landmark);
 
+  @override
+  String toString() {
+    return 'DetailUiModel(landmark: $landmark)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $DetailUiModelCopyWith<$Res> {
+  factory $DetailUiModelCopyWith(
+          DetailUiModel value, $Res Function(DetailUiModel) _then) =
+      _$DetailUiModelCopyWithImpl;
+  @useResult
+  $Res call({Landmark landmark});
+
+  $LandmarkCopyWith<$Res> get landmark;
+}
+
+/// @nodoc
+class _$DetailUiModelCopyWithImpl<$Res>
+    implements $DetailUiModelCopyWith<$Res> {
+  _$DetailUiModelCopyWithImpl(this._self, this._then);
+
+  final DetailUiModel _self;
+  final $Res Function(DetailUiModel) _then;
+
   /// Create a copy of DetailUiModel
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? landmark = null,
+  }) {
+    return _then(_self.copyWith(
+      landmark: null == landmark
+          ? _self.landmark
+          : landmark // ignore: cast_nullable_to_non_nullable
+              as Landmark,
+    ));
+  }
+
+  /// Create a copy of DetailUiModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$DetailUiModelImplCopyWith<_$DetailUiModelImpl> get copyWith =>
-      __$$DetailUiModelImplCopyWithImpl<_$DetailUiModelImpl>(this, _$identity);
+  $LandmarkCopyWith<$Res> get landmark {
+    return $LandmarkCopyWith<$Res>(_self.landmark, (value) {
+      return _then(_self.copyWith(landmark: value));
+    });
+  }
 }
 
-abstract class _DetailUiModel implements DetailUiModel {
-  const factory _DetailUiModel({required final Landmark landmark}) =
-      _$DetailUiModelImpl;
+/// @nodoc
+
+class _DetailUiModel implements DetailUiModel {
+  const _DetailUiModel({required this.landmark});
 
   @override
-  Landmark get landmark;
+  final Landmark landmark;
 
   /// Create a copy of DetailUiModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DetailUiModelImplCopyWith<_$DetailUiModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$DetailUiModelCopyWith<_DetailUiModel> get copyWith =>
+      __$DetailUiModelCopyWithImpl<_DetailUiModel>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DetailUiModel &&
+            (identical(other.landmark, landmark) ||
+                other.landmark == landmark));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, landmark);
+
+  @override
+  String toString() {
+    return 'DetailUiModel(landmark: $landmark)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$DetailUiModelCopyWith<$Res>
+    implements $DetailUiModelCopyWith<$Res> {
+  factory _$DetailUiModelCopyWith(
+          _DetailUiModel value, $Res Function(_DetailUiModel) _then) =
+      __$DetailUiModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call({Landmark landmark});
+
+  @override
+  $LandmarkCopyWith<$Res> get landmark;
+}
+
+/// @nodoc
+class __$DetailUiModelCopyWithImpl<$Res>
+    implements _$DetailUiModelCopyWith<$Res> {
+  __$DetailUiModelCopyWithImpl(this._self, this._then);
+
+  final _DetailUiModel _self;
+  final $Res Function(_DetailUiModel) _then;
+
+  /// Create a copy of DetailUiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? landmark = null,
+  }) {
+    return _then(_DetailUiModel(
+      landmark: null == landmark
+          ? _self.landmark
+          : landmark // ignore: cast_nullable_to_non_nullable
+              as Landmark,
+    ));
+  }
+
+  /// Create a copy of DetailUiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LandmarkCopyWith<$Res> get landmark {
+    return $LandmarkCopyWith<$Res>(_self.landmark, (value) {
+      return _then(_self.copyWith(landmark: value));
+    });
+  }
+}
+
+// dart format on

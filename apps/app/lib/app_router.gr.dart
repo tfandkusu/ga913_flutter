@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -17,13 +18,10 @@ class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
-          DetailRoute.name,
-          args: DetailRouteArgs(
-            landmarkId: landmarkId,
-            key: key,
-          ),
-          initialChildren: children,
-        );
+         DetailRoute.name,
+         args: DetailRouteArgs(landmarkId: landmarkId, key: key),
+         initialChildren: children,
+       );
 
   static const String name = 'DetailRoute';
 
@@ -31,19 +29,13 @@ class DetailRoute extends PageRouteInfo<DetailRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<DetailRouteArgs>();
-      return DetailScreen(
-        args.landmarkId,
-        key: args.key,
-      );
+      return DetailScreen(args.landmarkId, key: args.key);
     },
   );
 }
 
 class DetailRouteArgs {
-  const DetailRouteArgs({
-    required this.landmarkId,
-    this.key,
-  });
+  const DetailRouteArgs({required this.landmarkId, this.key});
 
   final int landmarkId;
 
@@ -59,10 +51,7 @@ class DetailRouteArgs {
 /// [HomeScreen]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 

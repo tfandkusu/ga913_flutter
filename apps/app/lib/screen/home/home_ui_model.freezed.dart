@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,86 +10,52 @@ part of 'home_ui_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HomeUiModel {
-  bool get progress => throw _privateConstructorUsedError;
-  bool get favoritesOnly => throw _privateConstructorUsedError;
-  List<Landmark> get landmarks => throw _privateConstructorUsedError;
-  int? get navigateToDetail => throw _privateConstructorUsedError;
+  bool get progress;
+  bool get favoritesOnly;
+  List<Landmark> get landmarks;
+  int? get navigateToDetail;
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HomeUiModelCopyWith<HomeUiModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HomeUiModelCopyWith<$Res> {
-  factory $HomeUiModelCopyWith(
-          HomeUiModel value, $Res Function(HomeUiModel) then) =
-      _$HomeUiModelCopyWithImpl<$Res, HomeUiModel>;
-  @useResult
-  $Res call(
-      {bool progress,
-      bool favoritesOnly,
-      List<Landmark> landmarks,
-      int? navigateToDetail});
-}
-
-/// @nodoc
-class _$HomeUiModelCopyWithImpl<$Res, $Val extends HomeUiModel>
-    implements $HomeUiModelCopyWith<$Res> {
-  _$HomeUiModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HomeUiModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $HomeUiModelCopyWith<HomeUiModel> get copyWith =>
+      _$HomeUiModelCopyWithImpl<HomeUiModel>(this as HomeUiModel, _$identity);
+
   @override
-  $Res call({
-    Object? progress = null,
-    Object? favoritesOnly = null,
-    Object? landmarks = null,
-    Object? navigateToDetail = freezed,
-  }) {
-    return _then(_value.copyWith(
-      progress: null == progress
-          ? _value.progress
-          : progress // ignore: cast_nullable_to_non_nullable
-              as bool,
-      favoritesOnly: null == favoritesOnly
-          ? _value.favoritesOnly
-          : favoritesOnly // ignore: cast_nullable_to_non_nullable
-              as bool,
-      landmarks: null == landmarks
-          ? _value.landmarks
-          : landmarks // ignore: cast_nullable_to_non_nullable
-              as List<Landmark>,
-      navigateToDetail: freezed == navigateToDetail
-          ? _value.navigateToDetail
-          : navigateToDetail // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is HomeUiModel &&
+            (identical(other.progress, progress) ||
+                other.progress == progress) &&
+            (identical(other.favoritesOnly, favoritesOnly) ||
+                other.favoritesOnly == favoritesOnly) &&
+            const DeepCollectionEquality().equals(other.landmarks, landmarks) &&
+            (identical(other.navigateToDetail, navigateToDetail) ||
+                other.navigateToDetail == navigateToDetail));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, progress, favoritesOnly,
+      const DeepCollectionEquality().hash(landmarks), navigateToDetail);
+
+  @override
+  String toString() {
+    return 'HomeUiModel(progress: $progress, favoritesOnly: $favoritesOnly, landmarks: $landmarks, navigateToDetail: $navigateToDetail)';
   }
 }
 
 /// @nodoc
-abstract class _$$HomeUiModelImplCopyWith<$Res>
-    implements $HomeUiModelCopyWith<$Res> {
-  factory _$$HomeUiModelImplCopyWith(
-          _$HomeUiModelImpl value, $Res Function(_$HomeUiModelImpl) then) =
-      __$$HomeUiModelImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $HomeUiModelCopyWith<$Res> {
+  factory $HomeUiModelCopyWith(
+          HomeUiModel value, $Res Function(HomeUiModel) _then) =
+      _$HomeUiModelCopyWithImpl;
   @useResult
   $Res call(
       {bool progress,
@@ -98,12 +65,11 @@ abstract class _$$HomeUiModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HomeUiModelImplCopyWithImpl<$Res>
-    extends _$HomeUiModelCopyWithImpl<$Res, _$HomeUiModelImpl>
-    implements _$$HomeUiModelImplCopyWith<$Res> {
-  __$$HomeUiModelImplCopyWithImpl(
-      _$HomeUiModelImpl _value, $Res Function(_$HomeUiModelImpl) _then)
-      : super(_value, _then);
+class _$HomeUiModelCopyWithImpl<$Res> implements $HomeUiModelCopyWith<$Res> {
+  _$HomeUiModelCopyWithImpl(this._self, this._then);
+
+  final HomeUiModel _self;
+  final $Res Function(HomeUiModel) _then;
 
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.
@@ -115,21 +81,21 @@ class __$$HomeUiModelImplCopyWithImpl<$Res>
     Object? landmarks = null,
     Object? navigateToDetail = freezed,
   }) {
-    return _then(_$HomeUiModelImpl(
+    return _then(_self.copyWith(
       progress: null == progress
-          ? _value.progress
+          ? _self.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as bool,
       favoritesOnly: null == favoritesOnly
-          ? _value.favoritesOnly
+          ? _self.favoritesOnly
           : favoritesOnly // ignore: cast_nullable_to_non_nullable
               as bool,
       landmarks: null == landmarks
-          ? _value._landmarks
+          ? _self.landmarks
           : landmarks // ignore: cast_nullable_to_non_nullable
               as List<Landmark>,
       navigateToDetail: freezed == navigateToDetail
-          ? _value.navigateToDetail
+          ? _self.navigateToDetail
           : navigateToDetail // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -138,8 +104,8 @@ class __$$HomeUiModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomeUiModelImpl implements _HomeUiModel {
-  const _$HomeUiModelImpl(
+class _HomeUiModel implements HomeUiModel {
+  const _HomeUiModel(
       {required this.progress,
       required this.favoritesOnly,
       required final List<Landmark> landmarks,
@@ -161,16 +127,19 @@ class _$HomeUiModelImpl implements _HomeUiModel {
   @override
   final int? navigateToDetail;
 
+  /// Create a copy of HomeUiModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'HomeUiModel(progress: $progress, favoritesOnly: $favoritesOnly, landmarks: $landmarks, navigateToDetail: $navigateToDetail)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HomeUiModelCopyWith<_HomeUiModel> get copyWith =>
+      __$HomeUiModelCopyWithImpl<_HomeUiModel>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomeUiModelImpl &&
+            other is _HomeUiModel &&
             (identical(other.progress, progress) ||
                 other.progress == progress) &&
             (identical(other.favoritesOnly, favoritesOnly) ||
@@ -185,35 +154,63 @@ class _$HomeUiModelImpl implements _HomeUiModel {
   int get hashCode => Object.hash(runtimeType, progress, favoritesOnly,
       const DeepCollectionEquality().hash(_landmarks), navigateToDetail);
 
+  @override
+  String toString() {
+    return 'HomeUiModel(progress: $progress, favoritesOnly: $favoritesOnly, landmarks: $landmarks, navigateToDetail: $navigateToDetail)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$HomeUiModelCopyWith<$Res>
+    implements $HomeUiModelCopyWith<$Res> {
+  factory _$HomeUiModelCopyWith(
+          _HomeUiModel value, $Res Function(_HomeUiModel) _then) =
+      __$HomeUiModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool progress,
+      bool favoritesOnly,
+      List<Landmark> landmarks,
+      int? navigateToDetail});
+}
+
+/// @nodoc
+class __$HomeUiModelCopyWithImpl<$Res> implements _$HomeUiModelCopyWith<$Res> {
+  __$HomeUiModelCopyWithImpl(this._self, this._then);
+
+  final _HomeUiModel _self;
+  final $Res Function(_HomeUiModel) _then;
+
   /// Create a copy of HomeUiModel
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomeUiModelImplCopyWith<_$HomeUiModelImpl> get copyWith =>
-      __$$HomeUiModelImplCopyWithImpl<_$HomeUiModelImpl>(this, _$identity);
+  $Res call({
+    Object? progress = null,
+    Object? favoritesOnly = null,
+    Object? landmarks = null,
+    Object? navigateToDetail = freezed,
+  }) {
+    return _then(_HomeUiModel(
+      progress: null == progress
+          ? _self.progress
+          : progress // ignore: cast_nullable_to_non_nullable
+              as bool,
+      favoritesOnly: null == favoritesOnly
+          ? _self.favoritesOnly
+          : favoritesOnly // ignore: cast_nullable_to_non_nullable
+              as bool,
+      landmarks: null == landmarks
+          ? _self._landmarks
+          : landmarks // ignore: cast_nullable_to_non_nullable
+              as List<Landmark>,
+      navigateToDetail: freezed == navigateToDetail
+          ? _self.navigateToDetail
+          : navigateToDetail // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
-abstract class _HomeUiModel implements HomeUiModel {
-  const factory _HomeUiModel(
-      {required final bool progress,
-      required final bool favoritesOnly,
-      required final List<Landmark> landmarks,
-      required final int? navigateToDetail}) = _$HomeUiModelImpl;
-
-  @override
-  bool get progress;
-  @override
-  bool get favoritesOnly;
-  @override
-  List<Landmark> get landmarks;
-  @override
-  int? get navigateToDetail;
-
-  /// Create a copy of HomeUiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HomeUiModelImplCopyWith<_$HomeUiModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on
