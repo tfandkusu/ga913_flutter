@@ -6,9 +6,8 @@ part of 'landmark_json_schema.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$LandmarkJsonSchemaImpl _$$LandmarkJsonSchemaImplFromJson(
-        Map<String, dynamic> json) =>
-    _$LandmarkJsonSchemaImpl(
+_LandmarkJsonSchema _$LandmarkJsonSchemaFromJson(Map<String, dynamic> json) =>
+    _LandmarkJsonSchema(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       state: json['state'] as String,
@@ -18,8 +17,7 @@ _$LandmarkJsonSchemaImpl _$$LandmarkJsonSchemaImplFromJson(
       imageName: json['imageName'] as String,
     );
 
-Map<String, dynamic> _$$LandmarkJsonSchemaImplToJson(
-        _$LandmarkJsonSchemaImpl instance) =>
+Map<String, dynamic> _$LandmarkJsonSchemaToJson(_LandmarkJsonSchema instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

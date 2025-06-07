@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'landmark.freezed.dart';
 
 @freezed
-class Landmark with _$Landmark {
+abstract class Landmark with _$Landmark {
   const factory Landmark({
     required int id,
     required String name,

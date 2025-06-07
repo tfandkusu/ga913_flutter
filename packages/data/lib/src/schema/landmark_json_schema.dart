@@ -4,7 +4,7 @@ part 'landmark_json_schema.freezed.dart';
 part 'landmark_json_schema.g.dart';
 
 @freezed
-class LandmarkJsonSchema with _$LandmarkJsonSchema {
+abstract class LandmarkJsonSchema with _$LandmarkJsonSchema {
   const factory LandmarkJsonSchema({
     required int id,
     required String name,

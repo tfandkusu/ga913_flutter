@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_ui_model.freezed.dart';
 
 @freezed
-class HomeUiModel with _$HomeUiModel {
+abstract class HomeUiModel with _$HomeUiModel {
   const factory HomeUiModel({
     required bool progress,
     required bool favoritesOnly,
