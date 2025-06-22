@@ -36,7 +36,7 @@ jobs:
           cache: true
 
       - name: Build app with NDK symbols
-        run: flutter build appbundle --split-debug-info=build/symbols
+        run: flutter build apk --split-debug-info=build/symbols
         working-directory: apps/app
 
       - name: Upload NDK symbles to Firebase Crashlytics
@@ -46,7 +46,7 @@ jobs:
 
       - name: Upload to Firebase App Distribution
         run: |
-          firebase appdistribution:distribute build/app/outputs/bundle/release/app-release.aab \
+          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
             --app ${{ secrets.FIREBASE_APP_ID }} \
             --groups testers
         working-directory: apps/app
