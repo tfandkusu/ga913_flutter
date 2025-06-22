@@ -1,0 +1,50 @@
+name: staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  staging:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Decode GCP service account key
+        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" | base64 -d > $HOME/google-application-credentials.json
+
+      - name: Set up GOOGLE_APPLICATION_CREDENTIALS environment variable
+        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/google-application-credentials.json" >> $GITHUB_ENV
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.3'
+          channel: 'stable'
+          cache: true
+
+      - name: Build app with NDK symbols
+        run: flutter build apk --split-debug-info=build/symbols
+        working-directory: apps/app
+
+      - name: Upload NDK symbles to Firebase Crashlytics
+        run: |
+          firebase crashlytics:symbols:upload build/symbols --app ${{ secrets.FIREBASE_APP_ID }}
+        working-directory: apps/app
+
+      - name: Upload to Firebase App Distribution
+        run: |
+          firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk \
+            --app ${{ secrets.FIREBASE_APP_ID }} \
+            --groups testers
+        working-directory: apps/app
