@@ -11,7 +11,6 @@ class DetailEventHandler {
   DetailEventHandler(this._landmarkId, this._landmarkListNotifier);
 
   void onFavoriteClick(bool isFavorite) {
-    while (true) {}
     _landmarkListNotifier.setFavorite(_landmarkId, isFavorite);
   }
 }
