@@ -41,7 +41,7 @@ jobs:
 
       - name: Upload NDK symbles to Firebase Crashlytics
         run: |
-          firebase crashlytics:symbols upload build/symbols
+          firebase crashlytics:symbols:upload build/symbols
         working-directory: apps/app
 
       - name: Upload to Firebase App Distribution
